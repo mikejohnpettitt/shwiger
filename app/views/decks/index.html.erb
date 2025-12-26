@@ -1,3 +1,7 @@
 <h1>All decks</h1>
 <h2><%= @decks.first.name %></h2>
 <h3><%= link_to "View cards", deck_path(@decks.first) %></h3>
+<%= button_to "Learn this deck",
+              user_decks_path(@decks.first),
+              method: :post,
+              params: { deck_id: @decks.first.id } %>

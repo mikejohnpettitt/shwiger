@@ -1,0 +1,8 @@
+<h1>Your study session</h1>
+<h3><%= StudySessionDeck.where(study_session_id: @study_session.id).first.deck.name %></h3>
+
+<div id="card-view">
+    <% @deck = StudySessionDeck.where(study_session_id: @study_session.id).first.deck %>
+    <% @card = Card.where(deck: @deck).first %>
+<%= render "shared/card", card: @card, deck: @deck %>
+</div>

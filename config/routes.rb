@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :decks do
     get :next, on: :member
   end
+  resources :user_decks
+  resources :study_sessions
 end
