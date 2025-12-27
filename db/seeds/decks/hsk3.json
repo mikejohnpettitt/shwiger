@@ -1,0 +1,3457 @@
+{
+    "deck": {
+        "name": "HSK 3"
+    },
+    "cards": [
+            {
+                "entry": {
+                    "chinese": "啊",
+                    "pinyin": "a"
+                },
+                "definitions": [
+                    "modal particle ending sentence, showing affirmation, approval, or consent"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "阿姨",
+                    "pinyin": "ā yí"
+                },
+                "definitions": [
+                    "maternal aunt",
+                    "step-mother",
+                    "childcare worker",
+                    "nursemaid",
+                    "woman of similar age to one's parents (term of address used by child)",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "矮",
+                    "pinyin": "ǎi"
+                },
+                "definitions": [
+                    "low",
+                    "short (in length)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "爱好",
+                    "pinyin": "ài hào"
+                },
+                "definitions": [
+                    "interest",
+                    "hobby",
+                    "appetite for",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "安静",
+                    "pinyin": "ān jìng"
+                },
+                "definitions": [
+                    "quiet",
+                    "peaceful",
+                    "calm"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "把",
+                    "pinyin": "bǎ"
+                },
+                "definitions": [
+                    "to hold",
+                    "to contain",
+                    "to grasp",
+                    "to take hold of",
+                    "a handle",
+                    "particle marking the following noun as a direct object",
+                    "classifier for objects with handle"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "搬",
+                    "pinyin": "bān"
+                },
+                "definitions": [
+                    "to move",
+                    "to shift",
+                    "to remove",
+                    "to transport",
+                    "to apply indiscriminately",
+                    "to copy mechanically"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "班",
+                    "pinyin": "bān"
+                },
+                "definitions": [
+                    "team",
+                    "class",
+                    "squad",
+                    "work shift",
+                    "classifier for groups",
+                    "ranking",
+                    "surname Ban",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "办法",
+                    "pinyin": "bàn fǎ"
+                },
+                "definitions": [
+                    "means",
+                    "method",
+                    "way (of doing sth)",
+                    "CL:条[tiao2] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "办公室",
+                    "pinyin": "bàn gōng shì"
+                },
+                "definitions": [
+                    "an office",
+                    "business premises",
+                    "a bureau",
+                    "CL:间[jian1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "半",
+                    "pinyin": "bàn"
+                },
+                "definitions": [
+                    "half",
+                    "semi-",
+                    "incomplete",
+                    "(after a number) and a half"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "帮忙",
+                    "pinyin": "bāng máng"
+                },
+                "definitions": [
+                    "to help",
+                    "to lend a hand",
+                    "to do a favor",
+                    "to do a good turn"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "包",
+                    "pinyin": "bāo"
+                },
+                "definitions": [
+                    "to cover",
+                    "to wrap",
+                    "to hold",
+                    "to include",
+                    "to take charge of",
+                    "package",
+                    "wrapper",
+                    "container",
+                    "bag",
+                    "to hold or embrace",
+                    "bundle",
+                    "packet",
+                    "to contract (to or for)",
+                    "surname Bao",
+                    "CL:个,只[zhi1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "饱",
+                    "pinyin": "bǎo"
+                },
+                "definitions": [
+                    "to eat till full",
+                    "satisfied"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "北方",
+                    "pinyin": "běi fāng"
+                },
+                "definitions": [
+                    "north",
+                    "the northern part a country",
+                    "China north of the Yellow River"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "被",
+                    "pinyin": "bèi"
+                },
+                "definitions": [
+                    "by (indicates passive-voice sentences or clauses)",
+                    "quilt",
+                    "to cover (literary)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "鼻子",
+                    "pinyin": "bí zi"
+                },
+                "definitions": [
+                    "nose",
+                    "CL:个,只[zhi1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "比较",
+                    "pinyin": "bǐ jiào"
+                },
+                "definitions": [
+                    "compare",
+                    "contrast",
+                    "fairly",
+                    "comparatively",
+                    "relatively",
+                    "quite",
+                    "rather"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "比赛",
+                    "pinyin": "bǐ sài"
+                },
+                "definitions": [
+                    "competition (sports etc)",
+                    "match",
+                    "CL:场[chang3] ,次[ci4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "笔记本",
+                    "pinyin": "bǐ jì běn"
+                },
+                "definitions": [
+                    "notebook",
+                    "CL:本[ben3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "必须",
+                    "pinyin": "bì xū"
+                },
+                "definitions": [
+                    "to have to",
+                    "must",
+                    "compulsory",
+                    "necessarily"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "变化",
+                    "pinyin": "biàn huà"
+                },
+                "definitions": [
+                    "change",
+                    "variation",
+                    "to change",
+                    "to vary",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "别人",
+                    "pinyin": "bié rén"
+                },
+                "definitions": [
+                    "others"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "冰箱",
+                    "pinyin": "bīng xiāng"
+                },
+                "definitions": [
+                    "icebox",
+                    "freezer cabinet",
+                    "refrigerator",
+                    "CL:台[tai2] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "不但…而且…",
+                    "pinyin": "bù dàn …ér qiě …"
+                },
+                "definitions": [
+                    "not only ... but also..."
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "菜单",
+                    "pinyin": "cài dān"
+                },
+                "definitions": [
+                    "menu",
+                    "CL:份[fen4] ,张[zhang1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "参加",
+                    "pinyin": "cān jiā"
+                },
+                "definitions": [
+                    "to participate",
+                    "to take part",
+                    "to join"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "草",
+                    "pinyin": "cǎo"
+                },
+                "definitions": [
+                    "grass",
+                    "straw",
+                    "manuscript",
+                    "draft (of a document)",
+                    "careless",
+                    "rough",
+                    "CL:棵[ke1] ,撮[zuo3] ,株[zhu1] ,根[gen1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "层",
+                    "pinyin": "céng"
+                },
+                "definitions": [
+                    "layer",
+                    "stratum",
+                    "laminated",
+                    "floor (of a building)",
+                    "storey",
+                    "classifier for layers",
+                    "repeated",
+                    "sheaf (math.)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "差",
+                    "pinyin": "chà"
+                },
+                "definitions": [
+                    "differ from",
+                    "short of",
+                    "to lack",
+                    "poor"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "超市",
+                    "pinyin": "chāo shì"
+                },
+                "definitions": [
+                    "supermarket (abbr.)",
+                    "CL:家[jia1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "衬衫",
+                    "pinyin": "chèn shān"
+                },
+                "definitions": [
+                    "shirt",
+                    "blouse",
+                    "CL:件[jian4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "城市",
+                    "pinyin": "chéng shì"
+                },
+                "definitions": [
+                    "city",
+                    "town",
+                    "CL:座[zuo4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "成绩",
+                    "pinyin": "chéng jì"
+                },
+                "definitions": [
+                    "achievement",
+                    "performance records",
+                    "grades",
+                    "CL:项[xiang4] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "迟到",
+                    "pinyin": "chí dào"
+                },
+                "definitions": [
+                    "to arrive late"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "除了",
+                    "pinyin": "chú le"
+                },
+                "definitions": [
+                    "besides",
+                    "apart from (... also...)",
+                    "in addition to",
+                    "except (for)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "船",
+                    "pinyin": "chuán"
+                },
+                "definitions": [
+                    "a boat",
+                    "vessel",
+                    "ship",
+                    "CL:条[tiao2] ,艘[sou1] ,只[zhi1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "春",
+                    "pinyin": "chūn"
+                },
+                "definitions": [
+                    "spring (time)",
+                    "gay",
+                    "joyful",
+                    "youthful",
+                    "love",
+                    "lust",
+                    "life"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "词典",
+                    "pinyin": "cí diǎn"
+                },
+                "definitions": [
+                    "dictionary (of Chinese compound words)",
+                    "CL:部[bu4] ,本[ben3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "聪明",
+                    "pinyin": "cōng ming"
+                },
+                "definitions": [
+                    "acute (of sight and hearing)",
+                    "clever",
+                    "intelligent",
+                    "bright",
+                    "smart"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "打扫",
+                    "pinyin": "dǎ sǎo"
+                },
+                "definitions": [
+                    "to clean",
+                    "to sweep"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "打算",
+                    "pinyin": "dǎ suàn"
+                },
+                "definitions": [
+                    "to plan",
+                    "to intend",
+                    "to calculate",
+                    "plan",
+                    "intention",
+                    "calculation",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "带",
+                    "pinyin": "dài"
+                },
+                "definitions": [
+                    "band",
+                    "belt",
+                    "girdle",
+                    "ribbon",
+                    "tire",
+                    "area",
+                    "zone",
+                    "region",
+                    "to wear",
+                    "to carry",
+                    "to lead",
+                    "to bring",
+                    "to look after",
+                    "to raise",
+                    "CL:条[tiao2];"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "担心",
+                    "pinyin": "dān xīn"
+                },
+                "definitions": [
+                    "anxious",
+                    "worried",
+                    "uneasy",
+                    "to worry",
+                    "to be anxious"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "蛋糕",
+                    "pinyin": "dàn gāo"
+                },
+                "definitions": [
+                    "cake",
+                    "CL:块[kuai4] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "当然",
+                    "pinyin": "dāng rán"
+                },
+                "definitions": [
+                    "of course",
+                    "without doubt",
+                    "only natural",
+                    "as it should be",
+                    "certainly;"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "地",
+                    "pinyin": "de"
+                },
+                "definitions": [
+                    "-ly",
+                    "structural particle: used before a verb or adjective, linking it to preceding modifying adverbial adjunct;"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "灯",
+                    "pinyin": "dēng"
+                },
+                "definitions": [
+                    "lamp",
+                    "light",
+                    "lantern",
+                    "CL:盏[zhan3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "地方",
+                    "pinyin": "dì fang"
+                },
+                "definitions": [
+                    "region",
+                    "regional (away from the central administration)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "地铁",
+                    "pinyin": "dì tiě"
+                },
+                "definitions": [
+                    "subway",
+                    "metro"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "地图",
+                    "pinyin": "dì tú"
+                },
+                "definitions": [
+                    "map",
+                    "CL:张[zhang1] ,本[ben3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "电梯",
+                    "pinyin": "diàn tī"
+                },
+                "definitions": [
+                    "elevator",
+                    "CL:台[tai2] ,部[bu4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "电子邮件",
+                    "pinyin": "diàn zǐ yóu jiàn"
+                },
+                "definitions": [
+                    "electronic mail",
+                    "email",
+                    "CL:封[feng1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "东",
+                    "pinyin": "dōng"
+                },
+                "definitions": [
+                    "east",
+                    "host (i.e. sitting on east side of guest)",
+                    "landlord",
+                    "surname Dong"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "冬",
+                    "pinyin": "dōng"
+                },
+                "definitions": [
+                    "winter"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "动物",
+                    "pinyin": "dòng wù"
+                },
+                "definitions": [
+                    "animal",
+                    "CL:只[zhi1] ,群[qun2] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "短",
+                    "pinyin": "duǎn"
+                },
+                "definitions": [
+                    "short or brief",
+                    "to lack",
+                    "weak point",
+                    "fault"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "段",
+                    "pinyin": "duàn"
+                },
+                "definitions": [
+                    "paragraph",
+                    "section",
+                    "segment",
+                    "stage (of a process)",
+                    "classifier for stories, periods of time, lengths of thread etc"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "锻炼",
+                    "pinyin": "duàn liàn"
+                },
+                "definitions": [
+                    "to engage in physical exercise",
+                    "to toughen",
+                    "to temper"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "多么",
+                    "pinyin": "duō me"
+                },
+                "definitions": [
+                    "how (wonderful etc)",
+                    "what (a great idea etc)",
+                    "however (difficult it may be etc)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "饿",
+                    "pinyin": "è a"
+                },
+                "definitions": [
+                    "to be hungry",
+                    "hungry"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "耳朵",
+                    "pinyin": "ěr duo"
+                },
+                "definitions": [
+                    "ear",
+                    "CL:只[zhi1] ,个,对[dui4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "发",
+                    "pinyin": "fā"
+                },
+                "definitions": [
+                    "to send out",
+                    "to show (one's feeling)",
+                    "to issue",
+                    "to develop",
+                    "classifier for gunshots (rounds)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "发烧",
+                    "pinyin": "fā shāo"
+                },
+                "definitions": [
+                    "have a high temperature (from illness)",
+                    "have a fever"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "发现",
+                    "pinyin": "fā xiàn"
+                },
+                "definitions": [
+                    "to find",
+                    "to discover"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "方便",
+                    "pinyin": "fāng biàn"
+                },
+                "definitions": [
+                    "convenient",
+                    "to help out",
+                    "to make things easy for people",
+                    "convenience",
+                    "suitable",
+                    "having money to spare",
+                    "(euphemism) to go to the toilet"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "放",
+                    "pinyin": "fàng"
+                },
+                "definitions": [
+                    "to release",
+                    "to free",
+                    "to let go",
+                    "to put",
+                    "to place",
+                    "to let out",
+                    "to set off (fireworks)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "放心",
+                    "pinyin": "fàng xīn"
+                },
+                "definitions": [
+                    "to set one's mind at rest",
+                    "to be at ease",
+                    "to rest"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "分",
+                    "pinyin": "fēn"
+                },
+                "definitions": [
+                    "to divide",
+                    "to separate",
+                    "to allocate",
+                    "to distinguish (good and bad)",
+                    "part or subdivision",
+                    "fraction",
+                    "one tenth (of certain units)",
+                    "unit of length equivalent to 0.33 cm",
+                    "minute",
+                    "a point (in sports or games)",
+                    "0.01 yuan (unit of money)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "复习",
+                    "pinyin": "fù xí"
+                },
+                "definitions": [
+                    "to revise",
+                    "to review",
+                    "revision",
+                    "CL:次[ci4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "附近",
+                    "pinyin": "fù jìn"
+                },
+                "definitions": [
+                    "(in the) vicinity",
+                    "nearby",
+                    "neighboring",
+                    "next to"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "干净",
+                    "pinyin": "gān jìng"
+                },
+                "definitions": [
+                    "neat and tidy",
+                    "clean"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "感冒",
+                    "pinyin": "gǎn mào"
+                },
+                "definitions": [
+                    "to catch cold",
+                    "(common) cold",
+                    "CL:次[ci4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "感兴趣",
+                    "pinyin": "gǎn xìng qù"
+                },
+                "definitions": [
+                    "to be interested;"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "刚才",
+                    "pinyin": "gāng cái"
+                },
+                "definitions": [
+                    "just now",
+                    "a moment ago"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "个子",
+                    "pinyin": "gè zi"
+                },
+                "definitions": [
+                    "height",
+                    "stature",
+                    "build",
+                    "size"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "根据",
+                    "pinyin": "gēn jù"
+                },
+                "definitions": [
+                    "according to",
+                    "based on",
+                    "basis",
+                    "foundation",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "跟",
+                    "pinyin": "gēn"
+                },
+                "definitions": [
+                    "with (someone)",
+                    "towards",
+                    "as (compared to)",
+                    "and (in addition to)",
+                    "heel",
+                    "to follow closely",
+                    "to go with",
+                    "to marry sb (of woman)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "更",
+                    "pinyin": "gèng"
+                },
+                "definitions": [
+                    "more",
+                    "still more",
+                    "even more"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "公斤",
+                    "pinyin": "gōng jīn"
+                },
+                "definitions": [
+                    "kilogram (kg)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "公园",
+                    "pinyin": "gōng yuán"
+                },
+                "definitions": [
+                    "public park",
+                    "CL:场[chang3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "故事",
+                    "pinyin": "gù shi"
+                },
+                "definitions": [
+                    "story",
+                    "tale",
+                    "narrative"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "刮风",
+                    "pinyin": "guā fēng"
+                },
+                "definitions": [
+                    "to be windy"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "关",
+                    "pinyin": "guān"
+                },
+                "definitions": [
+                    "to close",
+                    "to shut",
+                    "to turn off",
+                    "mountain pass",
+                    "to concern",
+                    "to involve"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "关系",
+                    "pinyin": "guān xì"
+                },
+                "definitions": [
+                    "relationship (network)",
+                    "relation",
+                    "to concern",
+                    "to affect",
+                    "to have to do with",
+                    "guanxi",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "关心",
+                    "pinyin": "guān xīn"
+                },
+                "definitions": [
+                    "to care for sth",
+                    "caring",
+                    "concerned"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "关于",
+                    "pinyin": "guān yú"
+                },
+                "definitions": [
+                    "pertaining to",
+                    "concerning",
+                    "regarding",
+                    "with regards to",
+                    "about",
+                    "a matter of"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "国家",
+                    "pinyin": "guó jiā"
+                },
+                "definitions": [
+                    "country",
+                    "nation",
+                    "state",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "过",
+                    "pinyin": "guò"
+                },
+                "definitions": [
+                    "to cross",
+                    "to go over",
+                    "to pass (time)",
+                    "to get along"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "过去",
+                    "pinyin": "guò qu"
+                },
+                "definitions": [
+                    "(in the) past",
+                    "former",
+                    "previous",
+                    "to go over",
+                    "to pass by"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "还是",
+                    "pinyin": "hái shì"
+                },
+                "definitions": [
+                    "or",
+                    "still",
+                    "nevertheless"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "害怕",
+                    "pinyin": "hài pà"
+                },
+                "definitions": [
+                    "to be afraid",
+                    "to be scared"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "黑板",
+                    "pinyin": "hēi bǎn"
+                },
+                "definitions": [
+                    "blackboard",
+                    "CL:块[kuai4] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "后来",
+                    "pinyin": "hòu lái"
+                },
+                "definitions": [
+                    "afterwards",
+                    "later"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "护照",
+                    "pinyin": "hù zhào"
+                },
+                "definitions": [
+                    "passport",
+                    "CL:本[ben3] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "花",
+                    "pinyin": "huā"
+                },
+                "definitions": [
+                    "to blossom",
+                    "to spend (money, time)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "花",
+                    "pinyin": "huā"
+                },
+                "definitions": [
+                    "flower",
+                    "blossoms",
+                    "bloom: pattern: design"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "画",
+                    "pinyin": "huà"
+                },
+                "definitions": [
+                    "to draw",
+                    "picture",
+                    "painting",
+                    "CL:幅[fu2] ,张[zhang1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "坏",
+                    "pinyin": "huài"
+                },
+                "definitions": [
+                    "bad",
+                    "spoiled",
+                    "broken",
+                    "to break down"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "欢迎",
+                    "pinyin": "huān yíng"
+                },
+                "definitions": [
+                    "to welcome",
+                    "welcome"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "环境",
+                    "pinyin": "huán jìng"
+                },
+                "definitions": [
+                    "environment",
+                    "circumstances",
+                    "surroundings",
+                    "ambient",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "还",
+                    "pinyin": "huán"
+                },
+                "definitions": [
+                    "to come back",
+                    "to give back",
+                    "to return",
+                    "to pay back"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "换",
+                    "pinyin": "huàn"
+                },
+                "definitions": [
+                    "change",
+                    "exchange"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "黄河",
+                    "pinyin": "huáng hé"
+                },
+                "definitions": [
+                    "Yellow River"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "回答",
+                    "pinyin": "huí dá"
+                },
+                "definitions": [
+                    "to reply",
+                    "to answer",
+                    "the answer",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "会议",
+                    "pinyin": "huì yì"
+                },
+                "definitions": [
+                    "meeting",
+                    "conference",
+                    "CL:场[chang3] ,届[jie4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "或者",
+                    "pinyin": "huò zhě"
+                },
+                "definitions": [
+                    "or",
+                    "possibly",
+                    "maybe",
+                    "perhaps"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "几乎",
+                    "pinyin": "jī hū"
+                },
+                "definitions": [
+                    "almost",
+                    "nearly",
+                    "practically"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "机会",
+                    "pinyin": "jī huì"
+                },
+                "definitions": [
+                    "opportunity",
+                    "chance",
+                    "occasion",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "极",
+                    "pinyin": "jí"
+                },
+                "definitions": [
+                    "extremely",
+                    "pole (geography, physics)",
+                    "utmost",
+                    "top"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "季节",
+                    "pinyin": "jì jié"
+                },
+                "definitions": [
+                    "time",
+                    "season",
+                    "period",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "记得",
+                    "pinyin": "jì de"
+                },
+                "definitions": [
+                    "to remember"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "检查",
+                    "pinyin": "jiǎn chá"
+                },
+                "definitions": [
+                    "inspection",
+                    "to examine",
+                    "to inspect",
+                    "CL:次[ci4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "简单",
+                    "pinyin": "jiǎn dān"
+                },
+                "definitions": [
+                    "simple",
+                    "not complicated"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "健康",
+                    "pinyin": "jiàn kāng"
+                },
+                "definitions": [
+                    "health",
+                    "healthy"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "见面",
+                    "pinyin": "jiàn miàn"
+                },
+                "definitions": [
+                    "to meet",
+                    "to see sb",
+                    "CL:次[ci4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "讲",
+                    "pinyin": "jiǎng"
+                },
+                "definitions": [
+                    "to explain",
+                    "to speak",
+                    "to negotiate",
+                    "to emphasise",
+                    "to be particular about",
+                    "as far as sth is concerned",
+                    "speech",
+                    "lecture"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "教",
+                    "pinyin": "jiào"
+                },
+                "definitions": [
+                    "to teach"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "脚",
+                    "pinyin": "jiǎo"
+                },
+                "definitions": [
+                    "foot",
+                    "leg",
+                    "base",
+                    "kick",
+                    "CL:双[shuang1] ,只[zhi1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "角",
+                    "pinyin": "jiǎo"
+                },
+                "definitions": [
+                    "horn",
+                    "angle",
+                    "corner ",
+                    "horn-shaped",
+                    "unit of money equal to 0.10 yuan",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "接",
+                    "pinyin": "jiē"
+                },
+                "definitions": [
+                    "to receive",
+                    "to answer (the phone)",
+                    "to meet or welcome sb",
+                    "to connect",
+                    "to catch",
+                    "to join",
+                    "to extend",
+                    "to take one's turn on duty",
+                    "take over for sb"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "街道",
+                    "pinyin": "jiē dào"
+                },
+                "definitions": [
+                    "street",
+                    "CL:条[tiao2]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "结婚",
+                    "pinyin": "jié hūn"
+                },
+                "definitions": [
+                    "to marry",
+                    "to get married",
+                    "CL:次[ci4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "结束",
+                    "pinyin": "jié shù"
+                },
+                "definitions": [
+                    "to finish",
+                    "to end",
+                    "to conclude",
+                    "to close",
+                    "termination"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "节目",
+                    "pinyin": "jié mù"
+                },
+                "definitions": [
+                    "program",
+                    "item (on a program)",
+                    "CL:台[tai2] ,个,套[tao4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "节日",
+                    "pinyin": "jié rì"
+                },
+                "definitions": [
+                    "holiday",
+                    "festival",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "解决",
+                    "pinyin": "jiě jué"
+                },
+                "definitions": [
+                    "to settle (a dispute)",
+                    "to resolve",
+                    "to solve"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "借",
+                    "pinyin": "jiè"
+                },
+                "definitions": [
+                    "to lend",
+                    "to borrow",
+                    "excuse",
+                    "pretext",
+                    "by means of",
+                    "to seize (an opportunity)",
+                    "to take (an opportunity)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "经常",
+                    "pinyin": "jīng cháng"
+                },
+                "definitions": [
+                    "day to day",
+                    "everyday",
+                    "daily",
+                    "frequently",
+                    "constantly",
+                    "regularly",
+                    "often"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "经过",
+                    "pinyin": "jīng guò"
+                },
+                "definitions": [
+                    "to pass",
+                    "to go through",
+                    "process",
+                    "course",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "经理",
+                    "pinyin": "jīng lǐ"
+                },
+                "definitions": [
+                    "manager",
+                    "director",
+                    "CL:个,位[wei4] ,名[ming2]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "久",
+                    "pinyin": "jiǔ"
+                },
+                "definitions": [
+                    "(long) time",
+                    "(long) duration of time"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "旧",
+                    "pinyin": "jiù"
+                },
+                "definitions": [
+                    "old",
+                    "opposite: new 新",
+                    "former",
+                    "worn (with age)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "句子",
+                    "pinyin": "jù zi"
+                },
+                "definitions": [
+                    "sentence",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "决定",
+                    "pinyin": "jué dìng"
+                },
+                "definitions": [
+                    "to decide (to do something)",
+                    "to resolve",
+                    "decision",
+                    "certainly",
+                    "CL:个,项[xiang4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "可爱",
+                    "pinyin": "kě ài"
+                },
+                "definitions": [
+                    "amiable",
+                    "cute",
+                    "lovely"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "渴",
+                    "pinyin": "kě"
+                },
+                "definitions": [
+                    "thirsty"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "刻",
+                    "pinyin": "kè"
+                },
+                "definitions": [
+                    "quarter (hour)",
+                    "moment",
+                    "to carve",
+                    "to engrave",
+                    "to cut",
+                    "oppressive",
+                    "classifier for short time intervals"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "客人",
+                    "pinyin": "kè rén"
+                },
+                "definitions": [
+                    "visitor",
+                    "guest",
+                    "customer",
+                    "client",
+                    "CL:位[wei4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "空调",
+                    "pinyin": "kōng tiáo"
+                },
+                "definitions": [
+                    "air conditioning"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "口",
+                    "pinyin": "kǒu"
+                },
+                "definitions": [
+                    "mouth",
+                    "classifier for things with mouths (people, domestic animals, cannons, wells etc)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "哭",
+                    "pinyin": "kū"
+                },
+                "definitions": [
+                    "to cry",
+                    "to weep"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "裤子",
+                    "pinyin": "kù zi"
+                },
+                "definitions": [
+                    "trousers",
+                    "pants",
+                    "CL:条[tiao2]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "筷子",
+                    "pinyin": "kuài zi"
+                },
+                "definitions": [
+                    "chopsticks",
+                    "CL:对[dui4] ,根[gen1] ,把[ba3] ,双[shuang1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "蓝",
+                    "pinyin": "lán"
+                },
+                "definitions": [
+                    "blue",
+                    "indigo plant"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "老",
+                    "pinyin": "lǎo"
+                },
+                "definitions": [
+                    "old (of people)",
+                    "venerable (person)",
+                    "prefix used before the surname of a person or a numeral indicating the order of birth of the children in a family or to indicate affection or familiarity",
+                    "experienced",
+                    "of long standing",
+                    "always",
+                    "all the time",
+                    "of the past",
+                    "very",
+                    "outdated",
+                    "(of meat etc) tough"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "离开",
+                    "pinyin": "lí kāi"
+                },
+                "definitions": [
+                    "to depart",
+                    "to leave"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "礼物",
+                    "pinyin": "lǐ wù"
+                },
+                "definitions": [
+                    "gift",
+                    "present",
+                    "CL:件[jian4] ,个,份[fen4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "历史",
+                    "pinyin": "lì shǐ"
+                },
+                "definitions": [
+                    "History",
+                    "CL:门[men2] ,段[duan4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "脸",
+                    "pinyin": "liǎn"
+                },
+                "definitions": [
+                    "face",
+                    "CL:张[zhang1] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "练习",
+                    "pinyin": "liàn xí"
+                },
+                "definitions": [
+                    "exercise",
+                    "drill",
+                    "practice",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "辆",
+                    "pinyin": "liàng"
+                },
+                "definitions": [
+                    "classifier for vehicles"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "聊天",
+                    "pinyin": "liáo tiān"
+                },
+                "definitions": [
+                    "to chat",
+                    "to gossip"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "了解",
+                    "pinyin": "liǎo jiě"
+                },
+                "definitions": [
+                    "to understand",
+                    "to realize",
+                    "to find out"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "邻居",
+                    "pinyin": "lín jū"
+                },
+                "definitions": [
+                    "neighbor",
+                    "next door",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "留学",
+                    "pinyin": "liú xué"
+                },
+                "definitions": [
+                    "to study abroad"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "楼",
+                    "pinyin": "lóu"
+                },
+                "definitions": [
+                    "house with more than 1 story",
+                    "storied building",
+                    "floor",
+                    "CL:层[ceng2] ,座[zuo4] ,栋[dong4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "绿",
+                    "pinyin": "lv4"
+                },
+                "definitions": [
+                    "green"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "马",
+                    "pinyin": "mǎ"
+                },
+                "definitions": [
+                    "horse",
+                    "abbr. for Malaysia,CL:匹"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "马上",
+                    "pinyin": "mǎ shàng"
+                },
+                "definitions": [
+                    "right away",
+                    "at once",
+                    "immediately",
+                    "lit. on horseback"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "满意",
+                    "pinyin": "mǎn yì"
+                },
+                "definitions": [
+                    "satisfied",
+                    "pleased",
+                    "to one's satisfaction"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "帽子",
+                    "pinyin": "mào zi"
+                },
+                "definitions": [
+                    "hat",
+                    "cap",
+                    "CL:顶[ding3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "米",
+                    "pinyin": "mǐ"
+                },
+                "definitions": [
+                    "rice",
+                    "meter (classifier)",
+                    "CL:粒[li4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "面包",
+                    "pinyin": "miàn bāo"
+                },
+                "definitions": [
+                    "bread",
+                    "CL:片[pian4] ,袋[dai4] ,块[kuai4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "明白",
+                    "pinyin": "míng bai"
+                },
+                "definitions": [
+                    "to understand (clearly)",
+                    "to realize",
+                    "clear",
+                    "obvious",
+                    "unequivocal;"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "拿",
+                    "pinyin": "ná"
+                },
+                "definitions": [
+                    "to hold",
+                    "to seize",
+                    "to catch",
+                    "to apprehend",
+                    "to take"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "奶奶",
+                    "pinyin": "nǎi nai"
+                },
+                "definitions": [
+                    "(informal) father's mother",
+                    "paternal grandmother",
+                    "CL:位[wei4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "南",
+                    "pinyin": "nán"
+                },
+                "definitions": [
+                    "south"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "难",
+                    "pinyin": "nán"
+                },
+                "definitions": [
+                    "difficult (to...)",
+                    "problem",
+                    "difficulty",
+                    "difficult",
+                    "not good"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "难过",
+                    "pinyin": "nán guò"
+                },
+                "definitions": [
+                    "feel sorry",
+                    "be grieved"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "年级",
+                    "pinyin": "nián jí"
+                },
+                "definitions": [
+                    "grade",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "年轻",
+                    "pinyin": "nián qīng"
+                },
+                "definitions": [
+                    "young"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "鸟",
+                    "pinyin": "niǎo"
+                },
+                "definitions": [
+                    "bird",
+                    "CL:只[zhi1] ,群[qun2]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "努力",
+                    "pinyin": "nǔ lì"
+                },
+                "definitions": [
+                    "great effort",
+                    "to strive",
+                    "to try hard"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "爬山",
+                    "pinyin": "pá shān"
+                },
+                "definitions": [
+                    "to climb a mountain",
+                    "to mountaineer",
+                    "hiking",
+                    "mountaineering"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "盘子",
+                    "pinyin": "pán zi"
+                },
+                "definitions": [
+                    "plate",
+                    "tray",
+                    "dish"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "胖",
+                    "pinyin": "pàng"
+                },
+                "definitions": [
+                    "fat",
+                    "plump"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "啤酒",
+                    "pinyin": "pí jiǔ"
+                },
+                "definitions": [
+                    "beer",
+                    "CL:杯[bei1] ,瓶[ping2] ,罐[guan4] ,桶[tong3] ,缸[gang1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "皮鞋",
+                    "pinyin": "pí xié"
+                },
+                "definitions": [
+                    "leather shoes"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "瓶子",
+                    "pinyin": "píng zi"
+                },
+                "definitions": [
+                    "bottle",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "其实",
+                    "pinyin": "qí shí"
+                },
+                "definitions": [
+                    "actually",
+                    "in fact",
+                    "really"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "其他",
+                    "pinyin": "qí tā"
+                },
+                "definitions": [
+                    "other",
+                    "the others",
+                    "else",
+                    "other than (that person)",
+                    "in addition to the person mentioned above"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "奇怪",
+                    "pinyin": "qí guài"
+                },
+                "definitions": [
+                    "strange",
+                    "odd"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "骑",
+                    "pinyin": "qí"
+                },
+                "definitions": [
+                    "to ride (an animal or bike)",
+                    "to sit astride"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "起飞",
+                    "pinyin": "qǐ fēi"
+                },
+                "definitions": [
+                    "to take off (in an airplane)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "起来",
+                    "pinyin": "qǐ lái"
+                },
+                "definitions": [
+                    "beginning or continuing an action",
+                    "upward movement",
+                    "stand up"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "清楚",
+                    "pinyin": "qīng chu"
+                },
+                "definitions": [
+                    "（be) clear (about)",
+                    "clearly understood",
+                    "clear",
+                    "distinct"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "请假",
+                    "pinyin": "qǐng jià"
+                },
+                "definitions": [
+                    "ask for time off"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "秋",
+                    "pinyin": "qiū"
+                },
+                "definitions": [
+                    "autumn",
+                    "fall",
+                    "harvest time",
+                    "a swing",
+                    "surname Qiu"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "裙子",
+                    "pinyin": "qún zi"
+                },
+                "definitions": [
+                    "skirt",
+                    "CL:条[tiao2]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "然后",
+                    "pinyin": "rán hòu"
+                },
+                "definitions": [
+                    "then (afterwards)",
+                    "after that",
+                    "afterwards",
+                    "after"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "热情",
+                    "pinyin": "rè qíng"
+                },
+                "definitions": [
+                    "cordial",
+                    "enthusiastic",
+                    "passion",
+                    "passionate",
+                    "passionately"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "认为",
+                    "pinyin": "rèn wéi"
+                },
+                "definitions": [
+                    "to believe",
+                    "to think",
+                    "to consider",
+                    "to feel"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "认真",
+                    "pinyin": "rèn zhēn"
+                },
+                "definitions": [
+                    "conscientious",
+                    "earnest",
+                    "serious",
+                    "to take seriously",
+                    "to take to heart"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "容易",
+                    "pinyin": "róng yì"
+                },
+                "definitions": [
+                    "easy",
+                    "likely",
+                    "liable (to)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "如果",
+                    "pinyin": "rú guǒ"
+                },
+                "definitions": [
+                    "if",
+                    "in case",
+                    "in the event that"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "伞",
+                    "pinyin": "sǎn"
+                },
+                "definitions": [
+                    "umbrella",
+                    "parasol",
+                    "CL:把[ba3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "上网",
+                    "pinyin": "shàng wǎng"
+                },
+                "definitions": [
+                    "to be on the internet",
+                    "to stretch a net (in a sports game or for covering sth)",
+                    "to be netted (of fish)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "声音",
+                    "pinyin": "shēng yīn"
+                },
+                "definitions": [
+                    "voice",
+                    "sound",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "生气",
+                    "pinyin": "shēng qì"
+                },
+                "definitions": [
+                    "angry",
+                    "mad",
+                    "offended",
+                    "animated",
+                    "to get angry",
+                    "to be enraged",
+                    "to take offense",
+                    "animation"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "世界",
+                    "pinyin": "shì jiè"
+                },
+                "definitions": [
+                    "world",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "试",
+                    "pinyin": "shì"
+                },
+                "definitions": [
+                    "to test",
+                    "to try",
+                    "experiment",
+                    "examination",
+                    "test"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "瘦",
+                    "pinyin": "shòu"
+                },
+                "definitions": [
+                    "tight",
+                    "thin",
+                    "lean"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "叔叔",
+                    "pinyin": "shū shu"
+                },
+                "definitions": [
+                    "father's younger brother",
+                    "uncle",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "舒服",
+                    "pinyin": "shū fu"
+                },
+                "definitions": [
+                    "comfortable",
+                    "feeling well"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "数学",
+                    "pinyin": "shù xué"
+                },
+                "definitions": [
+                    "mathematics",
+                    "mathematical"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "树",
+                    "pinyin": "shù"
+                },
+                "definitions": [
+                    "tree",
+                    "CL:棵[ke1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "刷牙",
+                    "pinyin": "shuā yá"
+                },
+                "definitions": [
+                    "to brush teeth"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "双",
+                    "pinyin": "shuāng"
+                },
+                "definitions": [
+                    "pair",
+                    "double",
+                    "two",
+                    "both"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "水平",
+                    "pinyin": "shuǐ píng"
+                },
+                "definitions": [
+                    "level (of achievement etc)",
+                    "standard",
+                    "horizontal"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "司机",
+                    "pinyin": "sī jī"
+                },
+                "definitions": [
+                    "chauffeur",
+                    "driver",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "太阳",
+                    "pinyin": "tài yáng"
+                },
+                "definitions": [
+                    "sun",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "特别",
+                    "pinyin": "tè bié"
+                },
+                "definitions": [
+                    "especially",
+                    "special",
+                    "particular",
+                    "unusual"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "疼",
+                    "pinyin": "téng"
+                },
+                "definitions": [
+                    "(it) hurts",
+                    "love fondly",
+                    "ache",
+                    "pain",
+                    "sore"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "提高",
+                    "pinyin": "tí gāo"
+                },
+                "definitions": [
+                    "to raise",
+                    "to increase"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "体育",
+                    "pinyin": "tǐ yù"
+                },
+                "definitions": [
+                    "sports",
+                    "physical education"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "甜",
+                    "pinyin": "tián"
+                },
+                "definitions": [
+                    "sweet"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "条",
+                    "pinyin": "tiáo"
+                },
+                "definitions": [
+                    "strip",
+                    "item",
+                    "article",
+                    "clause (of law or treaty)",
+                    "classifier for long thin things (ribbon, river, road, trousers etc)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "同事",
+                    "pinyin": "tóng shì"
+                },
+                "definitions": [
+                    "colleague",
+                    "co-worker",
+                    "CL:个,位[wei4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "同意",
+                    "pinyin": "tóng yì"
+                },
+                "definitions": [
+                    "to agree",
+                    "to consent",
+                    "to approve"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "头发",
+                    "pinyin": "tóu fa"
+                },
+                "definitions": [
+                    "hair (on the head)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "突然",
+                    "pinyin": "tū rán"
+                },
+                "definitions": [
+                    "sudden",
+                    "abrupt",
+                    "unexpected"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "图书馆",
+                    "pinyin": "tú shū guǎn"
+                },
+                "definitions": [
+                    "library",
+                    "CL:家[jia1] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "腿",
+                    "pinyin": "tuǐ"
+                },
+                "definitions": [
+                    "leg",
+                    "CL:条[tiao2]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "完成",
+                    "pinyin": "wán chéng"
+                },
+                "definitions": [
+                    "complete",
+                    "accomplish",
+                    "perfect tense (grammar)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "碗",
+                    "pinyin": "wǎn"
+                },
+                "definitions": [
+                    "bowl",
+                    "cup",
+                    "CL:只[zhi1] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "万",
+                    "pinyin": "wàn"
+                },
+                "definitions": [
+                    "ten thousand",
+                    "a great number"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "忘记",
+                    "pinyin": "wàng jì"
+                },
+                "definitions": [
+                    "to forget"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "为",
+                    "pinyin": "wèi"
+                },
+                "definitions": [
+                    "because of",
+                    "for",
+                    "to"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "为了",
+                    "pinyin": "wèi le"
+                },
+                "definitions": [
+                    "in order to",
+                    "for the purpose of",
+                    "so as to"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "位",
+                    "pinyin": "wèi"
+                },
+                "definitions": [
+                    "position",
+                    "location",
+                    "place",
+                    "seat",
+                    "classifier for people (honorific)",
+                    "classifier for binary bits (e.g. 十六位 16-bit or 2 bytes)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "文化",
+                    "pinyin": "wén huà"
+                },
+                "definitions": [
+                    "culture",
+                    "civilization",
+                    "cultural",
+                    "CL:个,种[zhong3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "西",
+                    "pinyin": "xī"
+                },
+                "definitions": [
+                    "west"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "习惯",
+                    "pinyin": "xí guàn"
+                },
+                "definitions": [
+                    "habit",
+                    "custom",
+                    "usual practice",
+                    "to be used to",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "洗手间",
+                    "pinyin": "xǐ shǒu jiān"
+                },
+                "definitions": [
+                    "toilet",
+                    "lavatory",
+                    "washroom"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "洗澡",
+                    "pinyin": "xǐ zǎo"
+                },
+                "definitions": [
+                    "to bathe",
+                    "to take a shower"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "夏",
+                    "pinyin": "xià"
+                },
+                "definitions": [
+                    "summer"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "先",
+                    "pinyin": "xiān"
+                },
+                "definitions": [
+                    "early",
+                    "prior",
+                    "former",
+                    "in advance",
+                    "first"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "相信",
+                    "pinyin": "xiāng xìn"
+                },
+                "definitions": [
+                    "to believe",
+                    "to be convinced (that something is true)",
+                    "to accept sth as true"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "香蕉",
+                    "pinyin": "xiāng jiāo"
+                },
+                "definitions": [
+                    "banana",
+                    "CL:枝[zhi1] ,根[gen1] ,个,把[ba3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "像",
+                    "pinyin": "xiàng"
+                },
+                "definitions": [
+                    "(look) like",
+                    "similar (to)",
+                    "appearance",
+                    "to appear",
+                    "to seem",
+                    "image",
+                    "portrait",
+                    "resemble",
+                    "seem"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "向",
+                    "pinyin": "xiàng"
+                },
+                "definitions": [
+                    "direction",
+                    "orientation",
+                    "to face",
+                    "to turn toward",
+                    "to",
+                    "towards",
+                    "shortly before",
+                    "formerly",
+                    "to side with",
+                    "to be partial to",
+                    "all along (previously)",
+                    "surname Xiang"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "小心",
+                    "pinyin": "xiǎo xīn"
+                },
+                "definitions": [
+                    "to be careful",
+                    "to take care"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "校长",
+                    "pinyin": "xiào zhǎng"
+                },
+                "definitions": [
+                    "(college, university) president",
+                    "headmaster",
+                    "CL:个,位[wei4] ,名[ming2]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "新闻",
+                    "pinyin": "xīn wén"
+                },
+                "definitions": [
+                    "news",
+                    "CL:条[tiao2] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "新鲜",
+                    "pinyin": "xīn xiān"
+                },
+                "definitions": [
+                    "fresh (experience, food etc)",
+                    "freshness"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "信用卡",
+                    "pinyin": "xìn yòng kǎ"
+                },
+                "definitions": [
+                    "credit card"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "行李箱",
+                    "pinyin": "xíng lǐ xiāng"
+                },
+                "definitions": [
+                    "suitcase"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "熊猫",
+                    "pinyin": "xióng māo"
+                },
+                "definitions": [
+                    "panda",
+                    "CL:只[zhi1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "需要",
+                    "pinyin": "xū yào"
+                },
+                "definitions": [
+                    "to need",
+                    "to want",
+                    "to demand",
+                    "needs",
+                    "to require"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "选择",
+                    "pinyin": "xuǎn zé"
+                },
+                "definitions": [
+                    "to select",
+                    "to pick",
+                    "choice",
+                    "option",
+                    "alternative"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "要求",
+                    "pinyin": "yāo qiú"
+                },
+                "definitions": [
+                    "to request",
+                    "to require",
+                    "to stake a claim",
+                    "to ask",
+                    "to demand",
+                    "CL:点[dian3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "爷爷",
+                    "pinyin": "yé ye"
+                },
+                "definitions": [
+                    "(informal) father's father",
+                    "paternal grandfather",
+                    "CL:个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "一直",
+                    "pinyin": "yī zhí"
+                },
+                "definitions": [
+                    "straight (in a straight line)",
+                    "continuously",
+                    "always",
+                    "from the beginning of... up to...",
+                    "all along"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "一定",
+                    "pinyin": "yí dìng"
+                },
+                "definitions": [
+                    "surely",
+                    "certainly",
+                    "necessarily",
+                    "fixed",
+                    "a certain (extent etc)",
+                    "given",
+                    "particular",
+                    "must"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "一共",
+                    "pinyin": "yī gòng"
+                },
+                "definitions": [
+                    "altogether"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "一会儿",
+                    "pinyin": "yī huì er"
+                },
+                "definitions": [
+                    "a while"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "一样",
+                    "pinyin": "yī yàng"
+                },
+                "definitions": [
+                    "same",
+                    "like",
+                    "equal to",
+                    "the same as",
+                    "just like"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "以前",
+                    "pinyin": "yǐ qián"
+                },
+                "definitions": [
+                    "before",
+                    "formerly",
+                    "previous",
+                    "ago"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "一般",
+                    "pinyin": "yī bān"
+                },
+                "definitions": [
+                    "ordinary",
+                    "common",
+                    "general",
+                    "generally",
+                    "in general",
+                    "same"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "一边",
+                    "pinyin": "yī biān"
+                },
+                "definitions": [
+                    "one side",
+                    "either side",
+                    "on the one hand",
+                    "on the other hand",
+                    "doing while"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "音乐",
+                    "pinyin": "yīn yuè"
+                },
+                "definitions": [
+                    "music",
+                    "CL:张[zhang1] ,曲[qu3] ,段[duan4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "银行",
+                    "pinyin": "yín háng"
+                },
+                "definitions": [
+                    "bank",
+                    "CL:家[jia1] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "饮料",
+                    "pinyin": "yǐn liào"
+                },
+                "definitions": [
+                    "(a) drink",
+                    "beverage"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "应该",
+                    "pinyin": "yīng gāi"
+                },
+                "definitions": [
+                    "ought to",
+                    "should",
+                    "must"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "影响",
+                    "pinyin": "yǐng xiǎng"
+                },
+                "definitions": [
+                    "influence",
+                    "effect",
+                    "to influence",
+                    "to affect (usually adversely)",
+                    "to disturb",
+                    "CL:股[gu3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "用",
+                    "pinyin": "yòng"
+                },
+                "definitions": [
+                    "to use",
+                    "to employ",
+                    "to have to",
+                    "to eat or drink",
+                    "expense or outlay",
+                    "usefulness",
+                    "hence",
+                    "therefore"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "游戏",
+                    "pinyin": "yóu xì"
+                },
+                "definitions": [
+                    "game",
+                    "play",
+                    "CL:场[chang3]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "有名",
+                    "pinyin": "yǒu míng"
+                },
+                "definitions": [
+                    "famous",
+                    "well-known"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "又",
+                    "pinyin": "yòu"
+                },
+                "definitions": [
+                    "(once) again",
+                    "also",
+                    "both... and...",
+                    "again"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "遇到",
+                    "pinyin": "yù dào"
+                },
+                "definitions": [
+                    "to meet",
+                    "to run into",
+                    "to come across"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "元",
+                    "pinyin": "yuán"
+                },
+                "definitions": [
+                    "Yuan (RMB)",
+                    "first",
+                    "primary",
+                    "basic"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "愿意",
+                    "pinyin": "yuàn yì"
+                },
+                "definitions": [
+                    "to wish",
+                    "to want",
+                    "ready",
+                    "willing (to do sth)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "月亮",
+                    "pinyin": "yuè liang"
+                },
+                "definitions": [
+                    "moon"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "越",
+                    "pinyin": "yuè"
+                },
+                "definitions": [
+                    "to exceed",
+                    "to climb over",
+                    "to surpass",
+                    "the more... the more"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "站",
+                    "pinyin": "zhàn"
+                },
+                "definitions": [
+                    "station",
+                    "to stand",
+                    "to halt",
+                    "to stop",
+                    "branch of a company or organisation"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "张",
+                    "pinyin": "zhāng"
+                },
+                "definitions": [
+                    "classifier for flat objects, sheet",
+                    "sheet of paper",
+                    "classifier for votes",
+                    "to open up",
+                    "to spread;"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "长",
+                    "pinyin": "zhǎng"
+                },
+                "definitions": [
+                    "elder",
+                    "senior",
+                    "to grow",
+                    "to develop",
+                    "to come into being",
+                    "to acquire",
+                    "to enhance",
+                    "to increase"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "着急",
+                    "pinyin": "zháo jí"
+                },
+                "definitions": [
+                    "to worry",
+                    "to feel anxious"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "照顾",
+                    "pinyin": "zhào gu"
+                },
+                "definitions": [
+                    "to take care of",
+                    "to show consideration",
+                    "to attend to",
+                    "to look after"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "照片",
+                    "pinyin": "zhào piàn"
+                },
+                "definitions": [
+                    "photo",
+                    "photograph",
+                    "picture",
+                    "CL:张[zhang1] ,套[tao4] ,幅[fu2]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "照相机",
+                    "pinyin": "zhào xiàng jī"
+                },
+                "definitions": [
+                    "camera",
+                    "CL:个,架[jia4] ,部[bu4] ,台[tai2] ,只[zhi1]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "只",
+                    "pinyin": "zhǐ"
+                },
+                "definitions": [
+                    "only",
+                    "just",
+                    "merely"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "只",
+                    "pinyin": "zhǐ"
+                },
+                "definitions": [
+                    "single",
+                    "one-only"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "只有…才…",
+                    "pinyin": "zhǐ yǒu …cái …"
+                },
+                "definitions": [
+                    "only if… then…"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "中间",
+                    "pinyin": "zhōng jiān"
+                },
+                "definitions": [
+                    "between",
+                    "intermediate",
+                    "mid",
+                    "middle"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "中文",
+                    "pinyin": "zhōng wén"
+                },
+                "definitions": [
+                    "Chinese written language",
+                    "Chinese writing",
+                    "Chinese"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "终于",
+                    "pinyin": "zhōng yú"
+                },
+                "definitions": [
+                    "at last",
+                    "in the end",
+                    "finally",
+                    "eventually"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "种",
+                    "pinyin": "zhǒng"
+                },
+                "definitions": [
+                    "kind",
+                    "sort",
+                    "type"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "重要",
+                    "pinyin": "zhòng yào"
+                },
+                "definitions": [
+                    "important",
+                    "significant",
+                    "major"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "周末",
+                    "pinyin": "zhōu mò"
+                },
+                "definitions": [
+                    "weekend"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "主要",
+                    "pinyin": "zhǔ yào"
+                },
+                "definitions": [
+                    "main",
+                    "principal",
+                    "major",
+                    "primary"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "注意",
+                    "pinyin": "zhù yì"
+                },
+                "definitions": [
+                    "to take note of",
+                    "to pay attention to"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "自己",
+                    "pinyin": "zì jǐ"
+                },
+                "definitions": [
+                    "self",
+                    "(reflexive pronoun)",
+                    "own"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "自行车",
+                    "pinyin": "zì xíng chē"
+                },
+                "definitions": [
+                    "bicycle",
+                    "bike",
+                    "CL:辆[liang4]"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "总是",
+                    "pinyin": "zǒng shì"
+                },
+                "definitions": [
+                    "always"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "嘴",
+                    "pinyin": "zuǐ"
+                },
+                "definitions": [
+                    "mouth",
+                    "beak",
+                    "spout (of teapot etc)",
+                    "CL:张[zhang1] ,个"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "最后",
+                    "pinyin": "zuì hòu"
+                },
+                "definitions": [
+                    "final",
+                    "last",
+                    "finally",
+                    "ultimate"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "最近",
+                    "pinyin": "zuì jìn"
+                },
+                "definitions": [
+                    "recent",
+                    "recently",
+                    "these days",
+                    "latest",
+                    "soon",
+                    "nearest (of locations)",
+                    "shortest (of routes)"
+                ]
+            },
+            {
+                "entry": {
+                    "chinese": "作业",
+                    "pinyin": "zuò yè"
+                },
+                "definitions": [
+                    "school assignment",
+                    "homework",
+                    "work",
+                    "task",
+                    "operation",
+                    "to operate",
+                    "CL:个"
+                ]
+            }
+        ]
+    }

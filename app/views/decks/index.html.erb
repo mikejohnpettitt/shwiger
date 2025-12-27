@@ -1,7 +1,9 @@
 <h1>All decks</h1>
-<h2><%= @decks.first.name %></h2>
-<h3><%= link_to "View cards", deck_path(@decks.first) %></h3>
+<% @decks.each do |deck| %>
+<h2><%= deck.name %></h2>
+<h3><%= link_to "View cards", deck_path(deck) %></h3>
 <%= button_to "Learn this deck",
-              user_decks_path(@decks.first),
+              user_decks_path(deck),
               method: :post,
-              params: { deck_id: @decks.first.id } %>
+              params: { deck_id: deck.id } %>
+<% end %>
