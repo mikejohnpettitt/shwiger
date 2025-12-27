@@ -3,8 +3,13 @@
 <% Definition.where(entry: card.entry).to_a.each do |definition| %>
     <h2><%= definition.english %></h2>
 <% end %>
-<%= button_to "Next",
+<%= button_to "I remember!",
               next_deck_path(deck),
               method: :get,
               form: { data: { turbo_stream: true } },
-              params: { card_id: card.id } %>
+              params: { card_id: card.id, retained: true } %>
+<%= button_to "I forgot!",
+              next_deck_path(deck),
+              method: :get,
+              form: { data: { turbo_stream: true } },
+              params: { card_id: card.id, retained: false } %>

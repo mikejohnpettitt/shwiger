@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_12_26_131311) do
+ActiveRecord::Schema[7.2].define(version: 2025_12_27_103533) do
   create_table "cards", force: :cascade do |t|
     t.integer "deck_id", null: false
     t.datetime "created_at", null: false
@@ -77,10 +77,11 @@ ActiveRecord::Schema[7.2].define(version: 2025_12_26_131311) do
     t.integer "user_id", null: false
     t.integer "card_id", null: false
     t.integer "preferred_definition_id", null: false
-    t.integer "retention"
+    t.float "retention"
     t.datetime "last_reviewed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "next_review"
     t.index ["card_id"], name: "index_user_cards_on_card_id"
     t.index ["preferred_definition_id"], name: "index_user_cards_on_preferred_definition_id"
     t.index ["user_id"], name: "index_user_cards_on_user_id"
