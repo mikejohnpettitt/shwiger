@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_12_27_103533) do
+ActiveRecord::Schema[7.2].define(version: 2025_12_27_154302) do
   create_table "cards", force: :cascade do |t|
     t.integer "deck_id", null: false
     t.datetime "created_at", null: false
@@ -70,6 +70,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_12_27_103533) do
     t.datetime "ended_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "mode"
     t.index ["user_id"], name: "index_study_sessions_on_user_id"
   end
 

@@ -12,7 +12,6 @@ class DecksController < ApplicationController
     @ralgo = 1.62
     @ralgo_max = 28
     @ralgo_min = 0.4
-
     @deck = Deck.find(params[:id])
     current = @deck.cards.find(params[:card_id])
     @user_card = UserCard.find_or_create_by(user: current_user, card: current, preferred_definition: Definition.where(entry: current.entry).first)
@@ -26,7 +25,6 @@ class DecksController < ApplicationController
     @user_card.retention = @ralgo_max if @user_card.retention > @ralgo_max
     @user_card.last_reviewed = Time.current
     @user_card.next_review = Time.current + @user_card.retention.day
-    raise
     @card = @deck.cards.where("id > ?", current.id).order(:id).first || @deck.cards.order(:id).first
     render turbo_stream: turbo_stream.update(
       "card-view",

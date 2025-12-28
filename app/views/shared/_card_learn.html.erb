@@ -1,0 +1,10 @@
+<h2><%= card.entry.chinese %></h2>
+<h2><%= card.entry.pinyin %></h2>
+<% Definition.where(entry: card.entry).to_a.each do |definition| %>
+    <h2><%= definition.english %></h2>
+<% end %>
+<%= button_to "Next",
+              next_study_session_path(study_session),
+              method: :get,
+              form: { data: { turbo_stream: true } },
+              params: { card_id: card.id, retained: true, deck: deck } %>
