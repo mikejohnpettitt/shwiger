@@ -91,4 +91,33 @@ ActiveRecord::Base.transaction do
   end
 end
 
-# end of HSK2
+# end of HSK3
+
+# create just the deck for HSK1 test
+
+path = Rails.root.join("db", "seeds", "decks", "hsk1_test.json")
+data = JSON.parse(File.read(path))
+
+deck = Deck.find_or_create_by!(
+  name: data.dig("deck", "name"),
+  user_id: admin.id
+)
+
+ActiveRecord::Base.transaction do
+  data.fetch("cards").each do |row|
+    entry_data = row.fetch("entry")
+
+    entry = Entry.find_or_create_by!(
+      chinese: entry_data.fetch("chinese"),
+      pinyin: entry_data.fetch("pinyin")
+    )
+
+    row.fetch("definitions").each do |english|
+      Definition.find_or_create_by!(entry_id: entry.id, english: english)
+    end
+
+    Card.find_or_create_by!(deck_id: deck.id, entry_id: entry.id)
+  end
+end
+
+# end of HSK3

@@ -3,11 +3,5 @@
 <h3><%= @study_session.mode %> mode</h3>
 
 <div id="card-view">
-    <% @deck = StudySessionDeck.where(study_session_id: @study_session.id).first.deck %>
-    <% @card = Card   
-    .where(deck: @deck)   
-    .where.not(     id: UserCard.where(user: current_user).select(:card_id)   )   
-    .first
- %>
 <%= render "shared/card_learn", card: @card, study_session: @study_session, deck: @deck %>
 </div>

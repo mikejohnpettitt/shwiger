@@ -1,0 +1,12 @@
+{
+    "deck": {
+        "name": "HSK 1 test"
+    },
+    "cards": [
+{ "entry": { "chinese": "爱" , "pinyin": "ài"}, "definitions" : ["to love", "affection", "to be fond of", "to like"] },
+{ "entry": { "chinese": "八" , "pinyin": "bā"}, "definitions" : ["eight", "8"] },
+{ "entry": { "chinese": "爸爸" , "pinyin": "bà ba"}, "definitions" : ["father (informal)", "CL:个[ge4] ,位[wei4]"] },
+{ "entry": { "chinese": "杯子" , "pinyin": "bēi zi"}, "definitions" : ["cup", "glass", "CL:个[ge4] ,支[zhi1]"] },
+{ "entry": { "chinese": "北京" , "pinyin": "běi jīng"}, "definitions" : ["Beijing", "capital of People's Republic of China", "Peking", "PRC government"] }    
+    ]
+}

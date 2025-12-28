@@ -1,6 +1,11 @@
 class UserDecksController < ApplicationController
+  def index
+    @user_decks = UserDeck.all
+  end
+
   def show
     @user_deck = UserDeck.find(params[:id])
+    @deck = @user_deck.deck
   end
 
   def create

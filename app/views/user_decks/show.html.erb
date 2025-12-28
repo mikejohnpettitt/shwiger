@@ -1,2 +1,18 @@
 <h1>Your <%= @user_deck.deck.name %> deck</h1>
-<h3><%= link_to "Revise", new_study_session_path %></h3>
+
+<h3>Your progress</h3>
+<h4><%= Card.where(deck: @deck).where(id: UserCard.where(user: current_user).select(:card_id)).count %>/<%= Card.where(deck: @deck).length %> cards learned</h4>
+<h4>Due to revise: <%= Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review IS NULL OR next_review <= ?", Time.current).select(:card_id)).count %></h4>
+<h3>Let's study!</h3>
+
+<%= simple_form_for StudySession.new do |f| %>
+<%= f.hidden_field :mode, value: "learn" %>
+<%= f.hidden_field :deck_id, value: @user_deck.deck.id %>
+  <%= f.button :submit, "Learn new cards" %>
+<% end %>
+
+<%= simple_form_for StudySession.new do |f| %>
+<%= f.hidden_field :mode, value: "revise" %>
+<%= f.hidden_field :deck_id, value: @user_deck.deck.id %>
+  <%= f.button :submit, "Revise cards" %>
+<% end %>
