@@ -1,7 +1,7 @@
 <h1>All decks</h1>
 <% @decks.each do |deck| %>
 <h2><%= deck.name %></h2>
-<%= button_to "Study this deck",
+<%= button_to "Add to my decks",
               user_decks_path(deck),
               method: :post,
               params: { deck_id: deck.id } %>

@@ -1,1 +1,19 @@
 <h1>Your results</h1>
+<% @study_session = StudySession.find(params[:id])  %>
+<% @deck = StudySessionDeck.where(study_session_id: @study_session.id).first.deck  %>
+<% @cards_reviewed = UserCard
+.where("last_reviewed >= ?", @study_session.started_at)
+.where("last_reviewed <= ?", @study_session.ended_at)
+ %>
+ <ul>
+ <% @cards_reviewed.each do |user_card| %>
+ <li>
+ <%= user_card.card.entry.chinese %>
+ <%= user_card.card.entry.pinyin %>
+ <% Definition.where(entry: user_card.card.entry).each do |definition| %>
+ <%= definition.english %>
+ <% end %>
+ <%= user_card.retention %>
+ </li>
+ <% end %>
+ </ul>

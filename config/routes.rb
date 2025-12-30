@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :study_sessions do
     get :next, on: :member
     get :results, on: :member
+    get :end_session, on: :member
   end
 end

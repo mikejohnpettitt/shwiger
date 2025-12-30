@@ -5,7 +5,7 @@
 <%= button_to "Study this deck",
               user_decks_path(deck),
               method: :post,
-              params: { deck_id: deck.id } %>
+              params: { deck_id: deck.deck.id } %>
 <% end %>
 
 <h2><%= link_to "Add deck", decks_path %></h2>

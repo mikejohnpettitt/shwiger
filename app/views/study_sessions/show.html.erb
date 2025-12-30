@@ -3,5 +3,10 @@
 <h3><%= @study_session.mode %> mode</h3>
 
 <div id="card-view">
+<% if @study_session.mode == "learn" %>
 <%= render "shared/card_learn", card: @card, study_session: @study_session, deck: @deck %>
+<% end %>
+<% if @study_session.mode == "revise" %>
+<%= render "shared/card_revise", card: @card, study_session: @study_session, deck: @deck %>
+<% end %>
 </div>

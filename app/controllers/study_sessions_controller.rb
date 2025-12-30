@@ -34,6 +34,13 @@ class StudySessionsController < ApplicationController
     redirect_to study_session_path(@study_session)
   end
 
+  def end_session
+    @study_session = StudySession.find(params[:id])
+    @study_session.ended_at = Time.current
+      @study_session.save!
+      redirect_to results_study_session_path(@study_session)
+  end
+
   def next
     @ralgo = 1.62
     @ralgo_max = 28
@@ -43,29 +50,35 @@ class StudySessionsController < ApplicationController
     @user_card = UserCard.find_or_create_by(user: current_user, card: current, preferred_definition: Definition.where(entry: current.entry).first)
     @user_card.save!
     @study_session = StudySession.find(params[:id])
+    # LEARN START
     if @study_session.mode == "learn"
       @user_card.retention = @ralgo_min
       @user_card.last_reviewed = Time.current
-      @user_card.next_review = Time.current + @user_card.retention.day
+      # @user_card.next_review = Time.current + @user_card.retention.day
+      @user_card.next_review = Time.current
       @user_card.save!
       @card = Card
       .where(deck: @deck)
       .where.not(id: UserCard.where(user: current_user).select(:card_id))
       .first
     end
-
+    # LEARN END
+    #
+    # REVISE START
     if @study_session.mode == "revise"
       @user_card.retention = @ralgo_min if @user_card.retention.nil?
-      if params[:retained]
+      if ActiveModel::Type::Boolean.new.cast(params[:retained])
         @user_card.retention = (@user_card.retention * @ralgo).ceil
+        @user_card.retention = @ralgo_max if @user_card.retention > @ralgo_max
+        @user_card.last_reviewed = Time.current
+        @user_card.next_review = Time.current + @user_card.retention.day
       else
         @user_card.retention = @ralgo_min
+        @user_card.last_reviewed = Time.current
+        @user_card.next_review = Time.current
       end
-      @user_card.retention = @ralgo_max if @user_card.retention > @ralgo_max
-      @user_card.last_reviewed = Time.current
-      @user_card.next_review = Time.current + @user_card.retention.day
       @user_card.save!
-      @card = Card
+      @cards = Card
       .where(deck: @deck)
       .where(
         id: UserCard
@@ -73,17 +86,27 @@ class StudySessionsController < ApplicationController
         .where("next_review IS NULL OR next_review <= ?", Time.current)
         .select(:card_id)
       )
-      .first
+      @sort_hash = {}
+      @cards.each do |card|
+        @sort_hash[card.id] = UserCard.where(user: current_user, card_id: card.id).first.next_review
+      end
+      @sort_hash = @sort_hash.sort_by { |_key, value| value }.to_h
+      if @sort_hash.empty? == false
+        @card = Card.find(@sort_hash.first.first)
+      else
+        @card = nil
+      end
     end
-
-    if @card.nil?
-      redirect_to results_study_session_path(@study_session)
-    else
-      render turbo_stream: turbo_stream.update(
+    # REVISE END
+    # END OF DECK
+    if @card.nil? == false
+        render turbo_stream: turbo_stream.update(
         "card-view",
-        partial: "shared/card_learn",
+        partial: "shared/card_#{@study_session.mode}",
         locals: { card: @card, deck: @deck, study_session: @study_session }
       )
+    else
+    end_session
     end
   end
 end
