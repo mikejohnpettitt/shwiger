@@ -14,13 +14,24 @@ class StudySessionsController < ApplicationController
       .first
     end
 
-    if @study_session.mode == "revise"
+    if @study_session.mode == "revise-definition"
       @card = Card
       .where(deck: @deck)
       .where(
         id: UserCard
         .where(user: current_user)
-        .where("next_review IS NULL OR next_review <= ?", Time.current)
+        .where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current)
+        .select(:card_id)
+      )
+      .first
+    end
+    if @study_session.mode == "revise-pinyin"
+      @card = Card
+      .where(deck: @deck)
+      .where(
+        id: UserCard
+        .where(user: current_user)
+        .where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current)
         .select(:card_id)
       )
       .first
@@ -52,10 +63,12 @@ class StudySessionsController < ApplicationController
     @study_session = StudySession.find(params[:id])
     # LEARN START
     if @study_session.mode == "learn"
-      @user_card.retention = @ralgo_min
-      @user_card.last_reviewed = Time.current
-      # @user_card.next_review = Time.current + @user_card.retention.day
-      @user_card.next_review = Time.current
+      @user_card.retention_definition = @ralgo_min
+      @user_card.retention_pinyin = @ralgo_min
+      @user_card.last_reviewed_definition = Time.current
+      @user_card.last_reviewed_pinyin = Time.current
+      @user_card.next_review_definition = Time.current
+      @user_card.next_review_pinyin = Time.current
       @user_card.save!
       @card = Card
       .where(deck: @deck)
@@ -64,18 +77,18 @@ class StudySessionsController < ApplicationController
     end
     # LEARN END
     #
-    # REVISE START
-    if @study_session.mode == "revise"
-      @user_card.retention = @ralgo_min if @user_card.retention.nil?
+    # REVISE DEFINITION START
+    if @study_session.mode == "revise-definition"
+      @user_card.retention_definition = @ralgo_min if @user_card.retention_definition.nil?
       if ActiveModel::Type::Boolean.new.cast(params[:retained])
-        @user_card.retention = (@user_card.retention * @ralgo).ceil
-        @user_card.retention = @ralgo_max if @user_card.retention > @ralgo_max
-        @user_card.last_reviewed = Time.current
-        @user_card.next_review = Time.current + @user_card.retention.day
+        @user_card.retention_definition = (@user_card.retention_definition * @ralgo).ceil
+        @user_card.retention_definition = @ralgo_max if @user_card.retention_definition > @ralgo_max
+        @user_card.last_reviewed_definition = Time.current
+        @user_card.next_review_definition = Time.current + @user_card.retention_definition.day
       else
-        @user_card.retention = @ralgo_min
-        @user_card.last_reviewed = Time.current
-        @user_card.next_review = Time.current
+        @user_card.retention_definition = @ralgo_min
+        @user_card.last_reviewed_definition = Time.current
+        @user_card.next_review_definition = Time.current
       end
       @user_card.save!
       @cards = Card
@@ -83,12 +96,12 @@ class StudySessionsController < ApplicationController
       .where(
         id: UserCard
         .where(user: current_user)
-        .where("next_review IS NULL OR next_review <= ?", Time.current)
+        .where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current)
         .select(:card_id)
       )
       @sort_hash = {}
       @cards.each do |card|
-        @sort_hash[card.id] = UserCard.where(user: current_user, card_id: card.id).first.next_review
+        @sort_hash[card.id] = UserCard.where(user: current_user, card_id: card.id).first.next_review_definition
       end
       @sort_hash = @sort_hash.sort_by { |_key, value| value }.to_h
       if @sort_hash.empty? == false
@@ -97,7 +110,41 @@ class StudySessionsController < ApplicationController
         @card = nil
       end
     end
-    # REVISE END
+    # REVISE DEFINITION END
+    # REVISE PINYIN START
+    if @study_session.mode == "revise-pinyin"
+      @user_card.retention_pinyin = @ralgo_min if @user_card.retention_pinyin.nil?
+      if ActiveModel::Type::Boolean.new.cast(params[:retained])
+        @user_card.retention_pinyin = (@user_card.retention_pinyin * @ralgo).ceil
+        @user_card.retention_pinyin = @ralgo_max if @user_card.retention_pinyin > @ralgo_max
+        @user_card.last_reviewed_pinyin = Time.current
+        @user_card.next_review_pinyin = Time.current + @user_card.retention_pinyin.day
+      else
+        @user_card.retention_pinyin = @ralgo_min
+        @user_card.last_reviewed_pinyin = Time.current
+        @user_card.next_review_pinyin = Time.current
+      end
+      @user_card.save!
+      @cards = Card
+      .where(deck: @deck)
+      .where(
+        id: UserCard
+        .where(user: current_user)
+        .where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current)
+        .select(:card_id)
+      )
+      @sort_hash = {}
+      @cards.each do |card|
+        @sort_hash[card.id] = UserCard.where(user: current_user, card_id: card.id).first.next_review_pinyin
+      end
+      @sort_hash = @sort_hash.sort_by { |_key, value| value }.to_h
+      if @sort_hash.empty? == false
+        @card = Card.find(@sort_hash.first.first)
+      else
+        @card = nil
+      end
+    end
+    # REVISE PINYIN END
     # END OF DECK
     if @card.nil? == false
         render turbo_stream: turbo_stream.update(
