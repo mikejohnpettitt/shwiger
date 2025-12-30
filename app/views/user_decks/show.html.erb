@@ -1,10 +1,12 @@
 <h1>Your <%= @user_deck.deck.name %> deck</h1>
 
-<% @to_revise = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review IS NULL OR next_review <= ?", Time.current).select(:card_id)).count %>
+<% @to_revise_def = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current).select(:card_id)).count %>
+<% @to_revise_py = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current).select(:card_id)).count %>
+
 
 <h3>Your progress</h3>
 <h4><%= Card.where(deck: @deck).where(id: UserCard.where(user: current_user).select(:card_id)).count %>/<%= Card.where(deck: @deck).length %> cards learned</h4>
-<h4>Due to revise: <%= @to_revise %></h4>
+<h4>Due to revise: <%= @to_revise_def + @to_revise_py %></h4>
 <h3>Let's study!</h3>
 
 <%= simple_form_for StudySession.new do |f| %>
@@ -14,11 +16,21 @@
 <% end %>
 
 <%= simple_form_for StudySession.new do |f| %>
-<%= f.hidden_field :mode, value: "revise" %>
+<%= f.hidden_field :mode, value: "revise-definition" %>
 <%= f.hidden_field :deck_id, value: @user_deck.deck.id %>
-    <% if @to_revise == 0 %>
-    <%= f.button :submit, "Revise cards", disabled: true %>
+    <% if @to_revise_def == 0 %>
+    <%= f.button :submit, "Revise definitions", disabled: true %>
     <% else %>
-    <%= f.button :submit, "Revise cards" %>
+    <%= f.button :submit, "Revise definitions" %>
+    <% end %>
+<% end %>
+
+<%= simple_form_for StudySession.new do |f| %>
+<%= f.hidden_field :mode, value: "revise-pinyin" %>
+<%= f.hidden_field :deck_id, value: @user_deck.deck.id %>
+    <% if @to_revise_py == 0 %>
+    <%= f.button :submit, "Revise pinyin", disabled: true %>
+    <% else %>
+    <%= f.button :submit, "Revise piniyn" %>
     <% end %>
 <% end %>
