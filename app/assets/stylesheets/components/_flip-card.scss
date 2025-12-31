@@ -1,0 +1,33 @@
+.flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+  outline: none;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
