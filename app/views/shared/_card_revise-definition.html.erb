@@ -1,27 +1,32 @@
 <div class="flip-card" data-controller="flip-card" data-action="click->flip-card#toggle" role="button">
     <div class="flip-card-inner" data-flip-card-target="inner">
         <div class="flip-card-front flip-card-face" >
-            <h2>
+            <h2 class="large-character">
                 <%= card.entry.chinese %>
             </h2>
         </div>
         <div class="flip-card-back flip-card-face">
-            <h2>
-                <%= card.entry.pinyin %>
-            </h2>
-            <h3>
-                <%= UserCard.where(card_id: card.id, user: current_user).first.id %>
-            </h3>
+            <div class="character-pinyin">
+                <%= card.entry.chinese %> - <%= card.entry.pinyin %>
+            </div>
+            <div class="preferred-definition">
+                <% @preferred_definition = UserCard.where(card: card, user: current_user).first.preferred_definition %>
+                <%= @preferred_definition.english %>
+            </div>
+            <div class="definition-container">
             <% Definition.where(entry: card.entry).to_a.each do |definition| %>
-                <h2>
-                    <%= definition.english %>
-                </h2>
+                <% if definition != @preferred_definition && definition.english.include?("CL:") == false %>
+                <div class="definition-item"><%= definition.english %></div>
                 <% end %>
+            <% end %>
+            </div>
+                <div class="button-container">
 
                     <%= button_to "I remember!" , next_study_session_path(study_session), method: :get, form: { data: {
-                        turbo_stream: true } }, params: { card_id: card.id, retained: true, deck: deck } %>
+                        turbo_stream: true } }, params: { card_id: card.id, retained: true, deck: deck }, class: "card-button remember" %>
                         <%= button_to "I forgot!" , next_study_session_path(study_session), method: :get, form: { data: {
-                            turbo_stream: true } }, params: { card_id: card.id, retained: false, deck: deck } %>
+                            turbo_stream: true } }, params: { card_id: card.id, retained: false, deck: deck }, class: "card-button forgot" %>
+            </div>
         </div>
     </div>
 </div>
