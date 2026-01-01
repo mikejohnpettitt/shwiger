@@ -1,0 +1,99 @@
+.flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  border-radius: 1em;
+  border: 1em solid rgb(255, 254, 251);
+
+}
+
+.flip-card-front {
+    background-color: rgb(13, 69, 181);
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background-color: rgb(255, 254, 251);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.large-character {
+    color: rgb(255, 254, 251);
+    font-size: 4em;
+    font-weight: 900;
+}
+
+.character {
+    font-size: 2em;
+}
+.pinyin {
+    font-size: 1em;
+}
+
+.preferred-definition {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.definition-container {
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.definition-item {
+    color: gray;
+    font-style: italic;
+    padding: 0.1em;
+}
+
+.button-container {
+    display: flex;
+}
+
+.card-button {
+    padding: 0.5em 1em;
+    margin: 0.2em 0.2em;
+    border-radius: 0.5em;
+    flex-grow: 1;
+    border: none;
+    width: 130px;
+    color: white;
+}
+
+.forgot {
+    background-color: rgb(235, 180, 12);
+}
+
+.remember {
+    background-color: rgb(32, 156, 102);
+}
