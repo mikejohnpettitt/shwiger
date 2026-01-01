@@ -36,8 +36,11 @@
 }
 
 .flip-card-back {
-  transform: rotateY(180deg);
-  background-color: rgb(255, 254, 251);
+    transform: rotateY(180deg);
+    background-color: rgb(255, 254, 251);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .large-character {
@@ -46,8 +49,11 @@
     font-weight: 900;
 }
 
-.character-pinyin {
+.character {
     font-size: 2em;
+}
+.pinyin {
+    font-size: 1em;
 }
 
 .preferred-definition {
@@ -59,7 +65,9 @@
     text-align: center;
     height: 100px;
     width: 100%;
-    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    
 }
 
 .definition-item {
@@ -75,6 +83,17 @@
 .card-button {
     padding: 0.5em 1em;
     margin: 0.2em 0.2em;
-    border-radius: 0.1em;
+    border-radius: 0.5em;
     flex-grow: 1;
+    border: none;
+    width: 130px;
+    color: white;
+}
+
+.forgot {
+    background-color: rgb(235, 180, 12);
+}
+
+.remember {
+    background-color: rgb(32, 156, 102);
 }
