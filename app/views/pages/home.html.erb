@@ -4,5 +4,11 @@
         <div class="banner-logo"></div>
     </div>
     <p>smart chinese flashcards</p>
-    <div class="button primary">Demo ></div>
+    <% if user_signed_in? %>
+        <%= link_to user_decks_path, class: "button primary large" do %>
+        My dashboard >
+        <% end %>
+    <% else %>
+    <div class="button primary large">Demo ></div>
+    <% end %>
 </div>
