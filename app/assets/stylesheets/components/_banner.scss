@@ -1,0 +1,47 @@
+.banner {
+background-color: $blue;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.full-height {
+  height: 100dvh;
+}
+
+.banner h1 {
+  margin: 0 0.2em;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 8em;
+  font-weight: bold;
+  font-family: "Jua", Arial, Helvetica, sans-serif;
+}
+
+.banner p {
+  font-size: 2em;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: 100;
+}
+
+.banner-logo-container {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-logo {
+    height: 200px;
+    width: 200px;
+    background-image: url("logo_color.svg");
+}
+
+.banner-logo > svg {
+  filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.2));
+}

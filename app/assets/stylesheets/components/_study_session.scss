@@ -1,0 +1,14 @@
+.study-session-title {
+    margin: 1em;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.interactions-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.interactions-container > form {
+    display: flex;
+}

@@ -1,0 +1,18 @@
+.button {
+    padding: 0.5em 1.5em;
+    border-radius: 0.2em;
+    font-size: 1em;
+    margin: 0.8em 0;
+    font-weight: 400;
+}
+
+.button.primary {
+    background-color: $orange;
+    color: white;
+}
+
+.button.outline-secondary {
+    border: 2px solid $blue;
+    background-color: rgba(245, 245, 245, 0);
+    color: $blue;
+}
