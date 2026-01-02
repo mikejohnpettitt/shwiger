@@ -62,7 +62,8 @@ wubi_data = JSON.parse(File.read(wubi_path))
 
 deck = Deck.find_or_create_by!(
   name: data.dig("deck", "name"),
-  user_id: admin.id
+  user_id: admin.id,
+  color: "blue"
 )
 
 ActiveRecord::Base.transaction do
@@ -106,7 +107,8 @@ wubi_data = JSON.parse(File.read(wubi_path))
 
 deck = Deck.find_or_create_by!(
   name: data.dig("deck", "name"),
-  user_id: admin.id
+  user_id: admin.id,
+    color: "green"
 )
 
 ActiveRecord::Base.transaction do
@@ -150,7 +152,8 @@ wubi_data = JSON.parse(File.read(wubi_path))
 
 deck = Deck.find_or_create_by!(
   name: data.dig("deck", "name"),
-  user_id: admin.id
+  user_id: admin.id,
+    color: "orange"
 )
 
 ActiveRecord::Base.transaction do
