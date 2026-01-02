@@ -51,11 +51,21 @@
             </div>
             <div class="definition-container">
                 <div class="definition-item">
-            <% Definition.where(entry: card.entry).to_a.each do |definition| %>
-                <% if definition != @preferred_definition && definition.english.include?("CL:") == false %>
-                    - <%= definition.english %> 
-                <% end %>
-            <% end %>
+                    <% if @focus_review %>
+                    Did you confuse with any of these?
+                        <% EntrySimilarity.where(entry: card.entry).to_a.each do |es| %>
+                            - <%= es.similar_entry.chinese %>
+                        <% end %>
+                        <% EntrySimilarity.where(similar_entry: card.entry).to_a.each do |es| %>
+                            - <%= es.entry.chinese %>
+                        <% end %>
+                    <% else %>
+                        <% Definition.where(entry: card.entry).to_a.each do |definition| %>
+                            <% if definition != @preferred_definition && definition.english.include?("CL:") == false %>
+                                - <%= definition.english %>
+                            <% end %>
+                        <% end %>
+                    <% end %>
                     </div>
             </div>
                 <div class="button-container">
