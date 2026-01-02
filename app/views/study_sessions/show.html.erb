@@ -1,6 +1,7 @@
-<h1>Your study session</h1>
-<h3><%= StudySessionDeck.where(study_session_id: @study_session.id).first.deck.name %></h3>
-<h3><%= @study_session.mode %> mode</h3>
+<% @study_text = "revising definitions" if @study_session.mode == "revise-definition" %>
+<% @study_text = "revising pinyin" if @study_session.mode == "revise-pinyin" %>
+<% @study_text = "learning new cards" if @study_session.mode == "learn" %>
+<% @deck = StudySessionDeck.where(study_session_id: @study_session.id).first.deck %>
 
 <div id="card-view">
 <% if @study_session.mode == "learn" %>
@@ -9,7 +10,16 @@
 <% if @study_session.mode == "revise-definition" %>
 <%= render "shared/card_revise-definition", card: @card, study_session: @study_session, deck: @deck %>
 <% end %>
-<% if @study_session.mode == "revise-pinyin" %>
+<% if @study_session.mode == "revise-pinyins" %>
 <%= render "shared/card_revise-pinyin", card: @card, study_session: @study_session, deck: @deck %>
 <% end %>
+</div>
+
+<div class="interactions-container">
+    <div class="study-session-title"><%= @study_text %> for <%= @deck.name %></div>
+    <%= button_to "End session",
+                end_session_study_session_path(@study_session),
+                method: :get,
+                class: "mx-auto button outline-secondary",
+                data: { turbo_confirm: "End this session?" } %>
 </div>
