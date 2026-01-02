@@ -1,0 +1,73 @@
+.decks-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.deck-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em;
+}
+
+.deck-box {
+    width: 240px;
+    height: 320px;
+    background-color: $blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    padding: 0.8em;
+    border-radius: 0.8em;
+    border: 0.8em solid rgb(255, 254, 251);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.deck-box.blue {
+    background-color: $blue;
+}
+
+.deck-box.orange {
+    background-color: $orange;
+}
+
+.deck-box.green {
+    background-color: $green;
+}
+
+.deck-box:hover {
+    transform: rotate(1deg);
+}
+
+.deck-motif {
+    position: absolute;
+    font-family: 'M PLUS 1 Code', 'Courier New', Courier, monospace;
+    opacity: 0.1;
+    letter-spacing: 10px;
+    width: 250px;
+    transform: translateX(-9px);
+}
+
+.deck-box.behind {
+    position: absolute;
+    transform: rotate(-5deg);
+    z-index: 0;
+}
+
+.deck-title {
+    font-size: 2em;
+font-weight: 500;
+    text-align: center;
+}
+
+.deck-subtitle {
+    font-size: 0.8em;
+    text-align: center;
+    opacity: 0.8;
+}

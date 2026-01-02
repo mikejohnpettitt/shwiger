@@ -1,0 +1,18 @@
+<% @to_revise_def = Card.where(deck: user_deck.deck).where(id: UserCard.where(user: current_user).where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current).select(:card_id)).count %>
+<% @to_revise_py = Card.where(deck: user_deck.deck).where(id: UserCard.where(user: current_user).where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current).select(:card_id)).count %>
+
+<%= link_to user_deck_path(user_deck), method: :post, params: { deck_id: user_deck.deck.id } do %>
+<div class="deck-container">
+    <div class="deck-box <%= user_deck.deck.color %>">
+        <div class="deck-motif"><% Card.where(deck:user_deck.deck).each do |card|%><%= card.entry.chinese %><% end %>
+        </div>
+        <div class="deck-title"><%= user_deck.deck.name %></div>
+        <div class="deck-subtitle">
+        <div><%= Card.where(deck: user_deck.deck).where(id: UserCard.where(user: current_user).select(:card_id)).count %>/<%= Card.where(deck: user_deck.deck).length %></div>
+        <div>Due to revise: <%= @to_revise_def + @to_revise_py %></div>
+        </div>
+    </div>
+    <div class="deck-box behind <%= user_deck.deck.color %>">
+    </div>
+</div>
+<% end %>
