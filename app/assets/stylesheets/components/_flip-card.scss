@@ -35,6 +35,10 @@
     background-color: $blue;
 }
 
+.flip-card-front.focus {
+    background-color: $orange;
+}
+
 .flip-card-back {
     transform: rotateY(180deg);
     background-color: rgb(255, 254, 251);

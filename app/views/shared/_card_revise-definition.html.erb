@@ -1,6 +1,39 @@
+<% #the code here should probably be handled by the controller %>
+<% @user_card = UserCard.where(card: card, user: current_user).first %>
+<% @focus_review = false %>
+<% @focus_review = true if @user_card.last_reviewed_definition > study_session.started_at %>
+<% @total = Card
+      .where(deck: @deck)
+      .where(
+        id: UserCard
+        .where(user: current_user)
+        .where("last_reviewed_definition <= ?", @study_session.started_at)
+        .where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current)
+        .select(:card_id)
+      ).count %>
+<% @forgotten = Card
+      .where(deck: @deck)
+      .where(
+        id: UserCard
+        .where(user: current_user)
+        .where("last_reviewed_definition >= ?", @study_session.started_at)
+        .where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current)
+        .select(:card_id)
+      ).count %>
+<% @remembered = Card
+      .where(deck: @deck)
+      .where(
+        id: UserCard
+        .where(user: current_user)
+        .where("last_reviewed_definition >= ?", @study_session.started_at)
+        .where("next_review_definition >= ?", Time.current)
+        .select(:card_id)
+      ).count %>
+
+
 <div class="flip-card" data-controller="flip-card" data-action="click->flip-card#toggle" role="button">
     <div class="flip-card-inner" data-flip-card-target="inner">
-        <div class="flip-card-front flip-card-face" >
+        <div class="flip-card-front flip-card-face <%= "focus" if @focus_review %>" >
             <h2 class="large-character">
                 <%= card.entry.chinese %>
             </h2>
@@ -13,7 +46,7 @@
                 <%= card.entry.pinyin %>
             </div>
             <div class="preferred-definition">
-                <% @preferred_definition = UserCard.where(card: card, user: current_user).first.preferred_definition %>
+                <% @preferred_definition = @user_card.preferred_definition %>
                 <%=@preferred_definition.english %>
             </div>
             <div class="definition-container">
@@ -34,4 +67,14 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="interactions-container">
+    <div class="study-session-info">Revising definitions for <%= @deck.name %></div>
+    <div class="study-session-info">Remaining: <%= @total %>. Forgotten: <%= @forgotten %>. Remembered: <%= @remembered %></div>
+    <%= button_to "End session",
+                end_session_study_session_path(study_session),
+                method: :get,
+                class: "mx-auto button outline-secondary",
+                data: { turbo_confirm: "End this session?" } %>
 </div>

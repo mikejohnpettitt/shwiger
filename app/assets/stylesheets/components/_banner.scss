@@ -14,20 +14,12 @@ background-color: $blue;
 }
 
 .banner h1 {
-  margin: 0 0.2em;
+  margin: 0 0.1em;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 8em;
   font-weight: bold;
   font-family: "Jua", Arial, Helvetica, sans-serif;
-}
-
-.banner p {
-  font-size: 2em;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-weight: 100;
 }
 
 .banner-logo-container {
@@ -44,4 +36,24 @@ background-color: $blue;
 
 .banner-logo > svg {
   filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.2));
+}
+
+.banner p {
+  font-size: 2em;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: 100;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .banner h1 {
+    font-size: 4em;
+  }
+  .banner-logo {
+    width: 100px;
+    height: 100px;
+  }
 }
