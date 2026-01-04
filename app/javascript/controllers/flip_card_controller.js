@@ -5,7 +5,9 @@ export default class extends Controller {
 
   toggle(event) {
     // prevent Space from scrolling
+    if (event.target.closest("button, a, input, textarea, select, form, label")) return
     if (event?.type === "keydown") event.preventDefault()
     this.innerTarget.classList.toggle("is-flipped")
   }
 }
+

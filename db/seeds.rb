@@ -9,6 +9,11 @@ admin.password = "password123"
 admin.password_confirmation = "password123"
 admin.save!
 
+admin2 = User.find_or_create_by(email: "admin2@shwiger.app")
+admin2.password = "password123"
+admin2.password_confirmation = "password123"
+admin2.save!
+
 # create just the deck for HSK1 test
 
 path = Rails.root.join("db", "seeds", "decks", "hsk1_test.json")

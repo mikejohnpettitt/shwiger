@@ -63,6 +63,19 @@
 .preferred-definition {
     font-size: 1.5em;
     font-style: italic;
+    position: relative;
+}
+
+.change-preferred-definition-label {
+    position: absolute;
+    left: 200px;
+    width: 120px;
+    background-color: $blue;
+    color: white;
+    font-size: 0.4em;
+    padding: 0.4em;
+    border-radius: 5px;
+    display: none;
 }
 
 .definition-container {
@@ -75,9 +88,20 @@
 }
 
 .definition-item {
-    color: gray;
+    color: darkslategray;
     font-style: italic;
     padding: 0.1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.individual-definition {
+    padding: 0.2em;
+    margin: 0.2em;
+    border-radius: 5px;
+    background-color: lightgray;
 }
 
 .button-container {
