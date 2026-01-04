@@ -5,7 +5,7 @@
 <div class="decks-container">
 
 <% @user_decks.each do |user_deck| %>
-<%= render "shared/deck", user_deck: user_deck %>
+<%= render "shared/deck", deck: user_deck.deck, context: "user-deck" %>
 <% end %>
 
 </div>
