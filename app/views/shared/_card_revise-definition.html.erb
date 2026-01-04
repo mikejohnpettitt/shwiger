@@ -32,7 +32,7 @@
 
 
 <div class="flip-card" data-controller="flip-card" data-action="click->flip-card#toggle" role="button">
-    <div class="flip-card-inner" data-flip-card-target="inner">
+    <div class="flip-card-inner <%= "is-flipped" if flipped %>"  data-flip-card-target="inner">
         <div class="flip-card-front flip-card-face <%= "focus" if @focus_review %>" >
             <h2 class="large-character">
                 <%= card.entry.chinese %>
@@ -48,6 +48,9 @@
             <div class="preferred-definition">
                 <% @preferred_definition = @user_card.preferred_definition %>
                 <%=@preferred_definition.english %>
+                <div class="change-preferred-definition-label">
+                    Want to change the main definition? Just select one from below.
+                </div>
             </div>
             <div class="definition-container">
                 <div class="definition-item">
@@ -62,7 +65,13 @@
                     <% else %>
                         <% Definition.where(entry: card.entry).to_a.each do |definition| %>
                             <% if definition != @preferred_definition && definition.english.include?("CL:") == false %>
-                                - <%= definition.english %>
+                            <%= button_to user_card_path(@user_card),
+                                method: :patch,
+                                params: { user_card: { preferred_definition_id: definition.id }, card: card, study_session: study_session, deck: deck },
+                                form: { data: { turbo: true } ,
+                                class: "individual-definition"} do %>                                    
+                                    <%= definition.english %>
+                                <% end %>
                             <% end %>
                         <% end %>
                     <% end %>
