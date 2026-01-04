@@ -1,5 +1,8 @@
-<h1>All cards for <%= @deck.name %></h1>
-
-<div id="card-view">
-<%= render "shared/card", card: @card, deck: @deck %>
+<h1><%= @deck.name %></h1>
+<div class="decks-container">
+<%= render "shared/deck", deck: @deck, context: "show-deck" %>
 </div>
+<%= button_to "Add to my decks",
+              user_decks_path(@deck),
+              method: :post,
+              params: { deck_id: @deck.id } %>

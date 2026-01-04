@@ -1,13 +1,9 @@
-<h1>Your <%= @user_deck.deck.name %> deck</h1>
-
 <% @to_revise_def = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current).select(:card_id)).count %>
 <% @to_revise_py = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current).select(:card_id)).count %>
 
-
-<h3>Your progress</h3>
-<h4><%= Card.where(deck: @deck).where(id: UserCard.where(user: current_user).select(:card_id)).count %>/<%= Card.where(deck: @deck).length %> cards learned</h4>
-<h4>Due to revise: <%= @to_revise_def + @to_revise_py %></h4>
-<h3>Let's study!</h3>
+<div class="decks-container">
+<%= render "shared/deck", deck: @deck, context: "show-user-deck" %>
+</div>
 
 <%= simple_form_for StudySession.new do |f| %>
 <%= f.hidden_field :mode, value: "learn" %>
@@ -34,3 +30,5 @@
     <%= f.button :submit, "Revise piniyn" %>
     <% end %>
 <% end %>
+
+<%= link_to "Return to my dashboard", user_decks_path %>

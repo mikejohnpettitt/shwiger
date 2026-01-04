@@ -1,18 +1,37 @@
-<% @to_revise_def = Card.where(deck: user_deck.deck).where(id: UserCard.where(user: current_user).where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current).select(:card_id)).count %>
-<% @to_revise_py = Card.where(deck: user_deck.deck).where(id: UserCard.where(user: current_user).where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current).select(:card_id)).count %>
 
-<%= link_to user_deck_path(user_deck), method: :post, params: { deck_id: user_deck.deck.id } do %>
+<% if context == "user-deck" %>
+<% path = user_deck_path(UserDeck.where(user: current_user, deck: deck).first)%>
+<% # path = user_deck_path(UserDeck.where(user: current_user, deck: deck).first), method: :post, params: { deck_id: deck.id } %>
+<% @to_revise_def = Card.where(deck: deck).where(id: UserCard.where(user: current_user).where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current).select(:card_id)).count %>
+<% @to_revise_py = Card.where(deck: deck).where(id: UserCard.where(user: current_user).where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current).select(:card_id)).count %>
+
+<% end %>
+
+<% if context == "index-deck" %>
+<% path = deck_path(deck) %>
+<% end %>
+
+<% if context == "show-deck" || context == "show-user-deck" %>
+<% path = "#" %>
+<% end %>
+
+<%= link_to path do %>
 <div class="deck-container">
-    <div class="deck-box <%= user_deck.deck.color %>">
-        <div class="deck-motif"><% Card.where(deck:user_deck.deck).each do |card|%><%= card.entry.chinese %><% end %>
+    <div class="deck-box <%= deck.color %> <%= 'inactive' if context == "show-user-deck" %>">
+        <div class="deck-motif"><% Card.where(deck:deck).each do |card|%><%= card.entry.chinese %><% end %>
         </div>
-        <div class="deck-title"><%= user_deck.deck.name %></div>
+        <div class="deck-title"><%= deck.name %></div>
         <div class="deck-subtitle">
-        <div><%= Card.where(deck: user_deck.deck).where(id: UserCard.where(user: current_user).select(:card_id)).count %>/<%= Card.where(deck: user_deck.deck).length %></div>
+        <% if context == "user-deck" || context == "show-user-deck" %>
+        <div><%= Card.where(deck: deck).where(id: UserCard.where(user: current_user).select(:card_id)).count %>/<%= Card.where(deck: deck).length %></div>
         <div>Due to revise: <%= @to_revise_def + @to_revise_py %></div>
+        <% end %>
+        <% if context == "index-deck" %>
+        <div><%= Card.where(deck: deck).length%> cards</div>
+        <% end %>
         </div>
     </div>
-    <div class="deck-box behind <%= user_deck.deck.color %>">
+    <div class="deck-box behind <%= deck.color %>">
     </div>
 </div>
 <% end %>
