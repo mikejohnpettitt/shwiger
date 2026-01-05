@@ -1,6 +1,9 @@
-<h1>All decks</h1>
+<h1 class="page-title">All decks</h1>
 <div class="decks-container">
 <% @decks.each do |deck| %>
 <%= render "shared/deck", deck: deck, context: "index-deck" %>
 <% end %>
+</div>
+<div class="buttons-container">
+<%= link_to "< Return to my dashboard", user_decks_path %>
 </div>

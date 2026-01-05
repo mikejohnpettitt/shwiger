@@ -41,6 +41,14 @@
     background-color: $green;
 }
 
+.deck-box.gray {
+    background-color: $gray;
+}
+
+.deck-box.light-gray {
+    background-color: $light-gray;
+}
+
 .deck-box:hover {
     transform: rotate(1deg);
 }
@@ -61,8 +69,9 @@
 }
 
 .deck-title {
-    font-size: 2em;
-font-weight: 500;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 0 0 0.2em 0;
     text-align: center;
 }
 

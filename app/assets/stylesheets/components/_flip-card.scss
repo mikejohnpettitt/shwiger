@@ -82,8 +82,8 @@
     text-align: center;
     height: 100px;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
     overflow: auto;
 }
 
@@ -97,11 +97,13 @@
     align-content: center;
 }
 
-.individual-definition {
-    padding: 0.2em;
+.individual-definition > button {
+    padding: 0.4em;
     margin: 0.2em;
     border-radius: 5px;
     background-color: lightgray;
+    border: none;
+    opacity: 0.8;
 }
 
 .button-container {

@@ -1,6 +1,7 @@
 <% @deck = StudySessionDeck.where(study_session_id: @study_session.id).first.deck %>
 
 
+
 <div id="card-view">
 <% if @study_session.mode == "learn" %>
 <%= render "shared/card_learn", card: @card, study_session: @study_session, deck: @deck %>

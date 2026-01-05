@@ -1,4 +1,4 @@
-<h1>Let's study!</h1>
+<h1 class="page-title">Let's study!</h1>
 <%= simple_form_for @study_session do |f| %>
 <%= f.input :mode, collection: ["learn", "revise"] %>
 <%= f.input :decks, collection: Deck.all %>

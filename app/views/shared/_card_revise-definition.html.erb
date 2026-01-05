@@ -67,7 +67,7 @@
                             <% if definition != @preferred_definition && definition.english.include?("CL:") == false %>
                             <%= button_to user_card_path(@user_card),
                                 method: :patch,
-                                params: { user_card: { preferred_definition_id: definition.id }, card: card, study_session: study_session, deck: deck },
+                                params: { user_card: @user_card, preferred_definition_id: definition.id, card: card, study_session: study_session, deck: deck },
                                 form: { data: { turbo: true } ,
                                 class: "individual-definition"} do %>                                    
                                     <%= definition.english %>
@@ -91,6 +91,8 @@
 <div class="interactions-container">
     <div class="study-session-info">Revising definitions for <%= @deck.name %></div>
     <div class="study-session-info">Remaining: <%= @total %>. Forgotten: <%= @forgotten %>. Remembered: <%= @remembered %></div>
+</div>
+<div class="buttons-container">
     <%= button_to "End session",
                 end_session_study_session_path(study_session),
                 method: :get,

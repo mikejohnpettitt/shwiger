@@ -15,6 +15,12 @@
 <% path = "#" %>
 <% end %>
 
+<% if context == "add-deck" %>
+<% deck = Deck.new(name: "Add more decks") %>
+<% deck.color = "gray" %>
+<% path = decks_path %>
+<% end %>
+
 <%= link_to path do %>
 <div class="deck-container">
     <div class="deck-box <%= deck.color %> <%= 'inactive' if context == "show-user-deck" %>">
@@ -28,6 +34,9 @@
         <% end %>
         <% if context == "index-deck" %>
         <div><%= Card.where(deck: deck).length%> cards</div>
+        <% end %>
+        <% if context == "add-deck" %>
+        <div>Click here to add more decks</div>
         <% end %>
         </div>
     </div>
