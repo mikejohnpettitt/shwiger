@@ -1,14 +1,79 @@
-<h2><%= card.entry.chinese %></h2>
-<h2><%= card.entry.pinyin %></h2>
-<% Definition.where(entry: card.entry).to_a.each do |definition| %>
-    <h2><%= definition.english %></h2>
+<% #the code here should probably be handled by the controller %>
+<% if @user_card.nil? || @user_card.card != card %>
+    <% @first_definition = Definition.where(entry: card.entry).first %>
+    <% @user_card = UserCard.create(user:current_user,card:card,preferred_definition:@first_definition) %>
+    <% @user_card.last_reviewed_definition = Time.current %>
+    <% @user_card.last_reviewed_pinyin = Time.current %>
+    <% @user_card.next_review_definition = Time.current %>
+    <% @user_card.next_review_pinyin = Time.current %>
+    <% @user_card.save! %>
+<% else %>
+    <% @user_card = UserCard.where(card:card,user:current_user).first %>
 <% end %>
-<%= button_to "Next",
-              next_study_session_path(study_session),
-              method: :get,
-              form: { data: { turbo_stream: true } },
-              params: { card_id: card.id, retained: true, deck: deck } %>
-<%= button_to "End session",
-              end_session_study_session_path(@study_session),
-              method: :get,
-              data: { turbo_confirm: "End this session?" } %>
+<% @total = Card
+      .where(deck: @deck)
+      .where(
+        id: UserCard
+        .where(user: current_user)
+        .where("created_at >= ?", @study_session.started_at)
+        .select(:card_id)
+      ).count %>
+
+
+<div class="flip-card" data-controller="flip-card" data-action="click->flip-card#toggle" role="button">
+    <div class="flip-card-inner <%= "is-flipped" if flipped %>"  data-flip-card-target="inner">
+        <div class="flip-card-front flip-card-face <%= "focus" if @focus_review %>" >
+            <h2 class="large-character">
+                <%= card.entry.chinese %>
+            </h2>
+        </div>
+        <div class="flip-card-back flip-card-face">
+            <div class="character">
+                <%= card.entry.chinese %>
+            </div>
+            <div class="card-secondary">
+                <%= card.entry.pinyin %>
+            </div>
+            <div class="card-primary">
+                <% @preferred_definition = @user_card.preferred_definition %>
+                <%=@preferred_definition.english %>
+                <div class="change-preferred-definition-label">
+                    Want to change the main definition? Just select one from below.
+                </div>
+            </div>
+            <div class="definition-container">
+                <div class="definition-item">
+                        <% Definition.where(entry: card.entry).to_a.each do |definition| %>
+                            <% if definition != @preferred_definition && definition.english.include?("CL:") == false %>
+                            <%= button_to user_card_path(@user_card),
+                                method: :patch,
+                                params: { user_card: @user_card, preferred_definition_id: definition.id, card: card, study_session: study_session, deck: deck },
+                                form: { data: { turbo: true } ,
+                                class: "individual-definition"} do %>                                    
+                                    <%= definition.english %>
+                                <% end %>
+                            <% end %>
+                        <% end %>
+                    </div>
+            </div>
+                <div class="button-container">
+
+                    <%= button_to "Got it!" , next_study_session_path(study_session), method: :get, form: { data: {
+                        turbo_stream: true } }, params: { card_id: card.id, deck: deck }, class: "card-button learn" %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="interactions-container">
+    <div class="study-session-info">Learning cards in <%= @deck.name %></div>
+    <div class="study-session-info"><%= @total %> card<%= "s" if @total >1 %> learned so far</div>
+
+</div>
+<div class="buttons-container">
+    <%= button_to "End session",
+                end_session_study_session_path(study_session),
+                method: :get,
+                class: "mx-auto button outline-secondary",
+                data: { turbo_confirm: "End this session?" } %>
+</div>

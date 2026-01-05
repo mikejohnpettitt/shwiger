@@ -4,13 +4,13 @@
 
 <div id="card-view">
 <% if @study_session.mode == "learn" %>
-<%= render "shared/card_learn", card: @card, study_session: @study_session, deck: @deck %>
+<%= render "shared/card_learn", card: @card, study_session: @study_session, deck: @deck, flipped: false %>
 <% end %>
 <% if @study_session.mode == "revise-definition" %>
 <%= render "shared/card_revise-definition", card: @card, study_session: @study_session, deck: @deck, flipped: false %>
 <% end %>
-<% if @study_session.mode == "revise-pinyins" %>
-<%= render "shared/card_revise-pinyin", card: @card, study_session: @study_session, deck: @deck %>
+<% if @study_session.mode == "revise-pinyin" %>
+<%= render "shared/card_revise-pinyin", card: @card, study_session: @study_session, deck: @deck, flipped: false %>
 <% end %>
 </div>
 

@@ -42,10 +42,10 @@
             <div class="character">
                 <%= card.entry.chinese %>
             </div>
-            <div class="pinyin">
+            <div class="card-secondary">
                 <%= card.entry.pinyin %>
             </div>
-            <div class="preferred-definition">
+            <div class="card-primary">
                 <% @preferred_definition = @user_card.preferred_definition %>
                 <%=@preferred_definition.english %>
                 <div class="change-preferred-definition-label">

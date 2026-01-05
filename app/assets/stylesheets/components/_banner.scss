@@ -20,6 +20,7 @@ background-color: $blue;
   font-size: 8em;
   font-weight: bold;
   font-family: "Jua", Arial, Helvetica, sans-serif;
+  z-index: 1;
 }
 
 .banner-logo-container {
@@ -32,6 +33,7 @@ background-color: $blue;
     height: 200px;
     width: 200px;
     background-image: url("logo_color.svg");
+    z-index: 1;
 }
 
 .banner-logo > svg {
@@ -46,6 +48,34 @@ background-color: $blue;
   font-weight: 100;
 }
 
+.banner > .button {
+  z-index: 1;
+}
+
+.deck-motif-banner {
+    position: absolute;
+    font-family: 'M PLUS 1 Code', 'Courier New', Courier, monospace;
+    opacity: 0.05;
+    letter-spacing: 10px;
+    width: 120dvw;
+    font-size: 5em;
+    color: white;
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.deck-motif-banner > div {
+  text-shadow: 1px 1px 3px rgba(0,0,0,1);
+}
+
+.deck-motif-banner > *:nth-child(even) {
+  transform: translateY(-2.5em) rotate(-45deg);
+} 
+
+.deck-motif-banner > *:nth-child(odd) {
+  transform: translateY(2.5em) rotate(-45deg);
+}
 
 
 @media only screen and (max-width: 600px) {
