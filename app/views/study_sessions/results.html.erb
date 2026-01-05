@@ -1,6 +1,7 @@
-<h1>Your results</h1>
+<h1 class="page-title">Your results</h1>
 <% @study_session = StudySession.find(params[:id])  %>
 <% @deck = StudySessionDeck.where(study_session_id: @study_session.id).first.deck  %>
+<% @user_deck = UserDeck.where(user: current_user, deck: @deck).first %>
 <% @cards_reviewed = UserCard.where(
   "(last_reviewed_definition BETWEEN :start AND :end)
    OR
@@ -20,3 +21,5 @@
  </li>
  <% end %>
  </ul>
+
+ <%= link_to "< Return to deck", user_deck_path(@user_deck) %>

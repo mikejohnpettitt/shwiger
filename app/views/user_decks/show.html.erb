@@ -1,23 +1,27 @@
 <% @to_revise_def = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current).select(:card_id)).count %>
 <% @to_revise_py = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current).select(:card_id)).count %>
 
+<h1 class="page-title">Your progress</h1>
+
 <div class="decks-container">
 <%= render "shared/deck", deck: @deck, context: "show-user-deck" %>
 </div>
 
+<div class="buttons-container">
+
 <%= simple_form_for StudySession.new do |f| %>
 <%= f.hidden_field :mode, value: "learn" %>
 <%= f.hidden_field :deck_id, value: @user_deck.deck.id %>
-  <%= f.button :submit, "Learn new cards" %>
+  <%= f.button :submit, "Learn new cards", class: "button primary" %>
 <% end %>
 
 <%= simple_form_for StudySession.new do |f| %>
 <%= f.hidden_field :mode, value: "revise-definition" %>
 <%= f.hidden_field :deck_id, value: @user_deck.deck.id %>
     <% if @to_revise_def == 0 %>
-    <%= f.button :submit, "Revise definitions", disabled: true %>
+    <%= f.button :submit, "Revise definitions", disabled: true, class: "button primary" %>
     <% else %>
-    <%= f.button :submit, "Revise definitions" %>
+    <%= f.button :submit, "Revise definitions", class: "button primary" %>
     <% end %>
 <% end %>
 
@@ -25,10 +29,11 @@
 <%= f.hidden_field :mode, value: "revise-pinyin" %>
 <%= f.hidden_field :deck_id, value: @user_deck.deck.id %>
     <% if @to_revise_py == 0 %>
-    <%= f.button :submit, "Revise pinyin", disabled: true %>
+    <%= f.button :submit, "Revise pinyin", disabled: true, class: "button primary" %>
     <% else %>
-    <%= f.button :submit, "Revise piniyn" %>
+    <%= f.button :submit, "Revise piniyn", class: "button primary" %>
     <% end %>
 <% end %>
+</div>
 
-<%= link_to "Return to my dashboard", user_decks_path %>
+<%= link_to "< Return to my dashboard", user_decks_path %>

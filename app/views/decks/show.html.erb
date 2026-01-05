@@ -1,8 +1,13 @@
-<h1><%= @deck.name %></h1>
+<h1 class="page-title"><%= @deck.name %></h1>
 <div class="decks-container">
 <%= render "shared/deck", deck: @deck, context: "show-deck" %>
 </div>
-<%= button_to "Add to my decks",
-              user_decks_path(@deck),
-              method: :post,
-              params: { deck_id: @deck.id } %>
+<div class="buttons-container">
+    <% UserDeck.where(deck: @deck, user: current_user).empty? ? @button_text = "Add to your decks" : @button_text = "Continue studying"  %>
+    <%= button_to @button_text,
+            user_decks_path(@deck),
+            method: :post,
+            params: { deck_id: @deck.id },
+            class: "button primary" %>
+</div>
+    <%= link_to "< Return to all decks", decks_path %>
