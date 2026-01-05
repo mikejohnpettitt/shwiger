@@ -63,13 +63,8 @@ class StudySessionsController < ApplicationController
     @study_session = StudySession.find(params[:id])
     # LEARN START
     if @study_session.mode == "learn"
-      @user_card.preferred_definition = Definition.where(entry: current.entry).first
       @user_card.retention_definition = @ralgo_min
       @user_card.retention_pinyin = @ralgo_min
-      @user_card.last_reviewed_definition = Time.current
-      @user_card.last_reviewed_pinyin = Time.current
-      @user_card.next_review_definition = Time.current
-      @user_card.next_review_pinyin = Time.current
       @user_card.save!
       @card = Card
       .where(deck: @deck)

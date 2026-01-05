@@ -11,4 +11,11 @@
     <% else %>
     <div class="button primary large">Demo ></div>
     <% end %>
+    <div class="deck-motif-banner">
+    <% Card.where(deck:2).each do |card|%>
+    <% card.entry.chinese.split("").each do |character| %>
+    <div><%= character %></div>
+    <% end %>
+    <% end %>
+        </div>
 </div>
