@@ -1,7 +1,7 @@
 <% @to_revise_def = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current).select(:card_id)).count %>
 <% @to_revise_py = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current).select(:card_id)).count %>
 
-<h1 class="page-title">Your progress</h1>
+<h1 class="page-title">My progress</h1>
 
 <div class="decks-container">
 <%= render "shared/deck", deck: @deck, context: "show-user-deck" %>
@@ -21,7 +21,7 @@
     <% if @to_revise_def == 0 %>
     <%= f.button :submit, "Revise definitions", disabled: true, class: "button primary" %>
     <% else %>
-    <%= f.button :submit, "Revise definitions", class: "button primary" %>
+    <%= f.button :submit, "Revise definitions (#{@to_revise_def})", class: "button primary" %>
     <% end %>
 <% end %>
 
@@ -31,7 +31,7 @@
     <% if @to_revise_py == 0 %>
     <%= f.button :submit, "Revise pinyin", disabled: true, class: "button primary" %>
     <% else %>
-    <%= f.button :submit, "Revise piniyn", class: "button primary" %>
+    <%= f.button :submit, "Revise piniyn (#{@to_revise_py})", class: "button primary" %>
     <% end %>
 <% end %>
 </div>

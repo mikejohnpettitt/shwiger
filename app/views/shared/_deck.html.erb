@@ -24,7 +24,14 @@
 <%= link_to path do %>
 <div class="deck-container">
     <div class="deck-box <%= deck.color %> <%= 'inactive' if context == "show-user-deck" %>">
-        <div class="deck-motif"><% Card.where(deck:deck).each do |card|%><%= card.entry.chinese %><% end %>
+        <div class="deck-motif">
+            <% Card.where(deck:deck).each do |card|%>
+                <% card.entry.chinese.split("").each do |character| %>
+                    <% if character != "…" %>
+                        <div><%= character %></div>
+                    <% end %>
+                <% end %>
+            <% end %>
         </div>
         <div class="deck-title"><%= deck.name %></div>
         <div class="deck-subtitle">

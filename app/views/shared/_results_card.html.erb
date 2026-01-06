@@ -1,0 +1,51 @@
+<div class="results-container">
+    <div class="results-left">
+        <div class="results-left-upper">
+            <div class="results-character">
+                <%= user_card.card.entry.chinese %>
+            </div>
+        </div>
+        <div class="results-left-lower">
+            <div class="results-pinyin">
+                <%= user_card.card.entry.pinyin %>
+            </div>
+        </div>
+    </div>
+    <div class="results-right">
+        <div class="results-right-upper">
+            <div class="results-preferred-definition">
+                <%= user_card.preferred_definition.english %>
+            </div>
+            <div class="results-definitions">
+                <% Definition.where(entry: user_card.card.entry).each_with_index do |definition,i| %>
+                    <% if definition != user_card.preferred_definition && definition.english.include?("CL:") == false %>
+                        <%= "- " if i> 1 %>
+                        <%= definition.english %>
+                    <% end %>
+                <% end %>
+            </div>
+            </div>
+        <div class="results-right-lower">
+        <div class="results-retention-def">
+            Definition:
+            <% if user_card.retention_definition.nil? %>
+            <%= "Still new" %>
+            <% else %>
+            <%= "Still new" if user_card.retention_definition >= 0 && user_card.retention_definition < 3 %>
+            <%= "Learning" if user_card.retention_definition >= 3 && user_card.retention_definition < 19  %>
+            <%= "Learned" if user_card.retention_definition >= 19 %>
+            <% end %>
+        </div>
+        <div class="results-retention-py">
+            Pinyin:
+            <% if user_card.retention_pinyin.nil? %>
+            <%= "Still new" %>
+            <% else %>
+            <%= "Still new" if user_card.retention_pinyin >= 0 && user_card.retention_pinyin < 3 %>
+            <%= "Learning" if user_card.retention_pinyin >= 3 && user_card.retention_pinyin < 19  %>
+            <%= "Learned" if user_card.retention_pinyin >= 19 %>
+            <% end %>
+        </div>
+    </div>
+    </div>
+    </div>

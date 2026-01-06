@@ -12,10 +12,12 @@
     <div class="button primary large">Demo ></div>
     <% end %>
     <div class="deck-motif-banner">
-    <% Card.where(deck:2).each do |card|%>
+    <% Card.where(deck:2).first(150).each do |card|%>
     <% card.entry.chinese.split("").each do |character| %>
+    <% if character != "…" %>
     <div><%= character %></div>
     <% end %>
     <% end %>
-        </div>
+    <% end %>
+    </div>
 </div>
