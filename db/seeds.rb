@@ -19,6 +19,8 @@ admin2.save!
 
 end
 
+admin = User.find_or_create_by(email: "admin@shwiger.app")
+
 # create just the deck for HSK1 test
 
 path = Rails.root.join("db", "seeds", "decks", "hsk1_test.json")
