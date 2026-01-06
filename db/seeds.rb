@@ -4,6 +4,9 @@ require 'fuzzystringmatch'
 require 'similar_text'
 jarow = FuzzyStringMatch::JaroWinkler.create(:native)
 
+if Rails.env.development?
+# create dev users
+
 admin = User.find_or_create_by(email: "admin@shwiger.app")
 admin.password = "password123"
 admin.password_confirmation = "password123"
@@ -13,6 +16,8 @@ admin2 = User.find_or_create_by(email: "admin2@shwiger.app")
 admin2.password = "password123"
 admin2.password_confirmation = "password123"
 admin2.save!
+
+end
 
 # create just the deck for HSK1 test
 
