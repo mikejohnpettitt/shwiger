@@ -57,10 +57,28 @@
     position: absolute;
     font-family: 'M PLUS 1 Code', 'Courier New', Courier, monospace;
     opacity: 0.1;
-    letter-spacing: 10px;
+    letter-spacing: 0.5em;
     width: 250px;
-    transform: translateX(-9px);
+    color: white;
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1em;
+    transform: translateX(-1em);
 }
+
+.deck-motif > div {
+//   text-shadow: 1px 1px 3px rgba(0,0,0,1);
+}
+
+.deck-motif > *:nth-child(even) {
+  transform: translateY(-1em) rotate(-45deg);
+} 
+
+.deck-motif > *:nth-child(odd) {
+  transform: translateY(1em) rotate(-45deg);
+}
+
 
 .deck-box.behind {
     position: absolute;

@@ -1,0 +1,66 @@
+.results-container {
+ display: flex;
+ justify-content: space-between;
+ max-width: 800px;
+ width: 100%;
+ margin: 0.4em auto;
+ background-color: white;
+}
+
+// .results-container * {
+//     border: red solid 1px;
+// }
+
+.results-left {
+    width: 30%;
+}
+
+.results-right {
+    width: 70%;
+}
+
+.results-left-upper, .results-right-upper, .results-left-lower, .results-right-lower {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.results-right-upper {
+    flex-direction: column;
+}
+
+.results-left-upper, .results-right-upper {
+    height: 100px;
+}
+
+.results-left-lower, .results-right-lower {
+    height: 50px;
+}
+
+.results-character {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.results-pinyin {
+    font-size: 1.3em;
+}
+
+.results-preferred-definition {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.results-definitions {
+    font-size: 0.7em;
+    opacity: 0.8;
+}
+
+.results-learning-status {
+    font-size: 0.7em;
+    opacity: 0.8;
+}
+
+.results-retention-def,.results-retention-py {
+    font-size: 0.8em;
+}
