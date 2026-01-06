@@ -18,6 +18,8 @@
 !/tmp/.keep
 /log/*.log*
 /tmp/
+/tmp/cache
+
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
