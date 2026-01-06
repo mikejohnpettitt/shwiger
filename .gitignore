@@ -16,6 +16,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/log/*.log*
+/tmp/
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
@@ -28,8 +30,11 @@
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
+/storage/*.sqlite3
 
 /public/assets
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+
