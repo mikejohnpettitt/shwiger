@@ -3,7 +3,7 @@
 <%= render "shared/deck", deck: @deck, context: "show-deck" %>
 </div>
 <div class="buttons-container">
-    <% UserDeck.where(deck: @deck, user: current_user).empty? ? @button_text = "Add to your decks" : @button_text = "Continue studying"  %>
+    <% UserDeck.where(deck: @deck, user: current_user).empty? ? @button_text = "Add to my decks" : @button_text = "Continue studying"  %>
     <%= button_to @button_text,
             user_decks_path(@deck),
             method: :post,

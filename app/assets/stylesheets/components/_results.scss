@@ -5,6 +5,7 @@
  width: 100%;
  margin: 0.4em auto;
  background-color: white;
+ padding: 0.2em;
 }
 
 // .results-container * {
@@ -12,11 +13,11 @@
 // }
 
 .results-left {
-    width: 30%;
+    width: 35%;
 }
 
 .results-right {
-    width: 70%;
+    width: 65%;
 }
 
 .results-left-upper, .results-right-upper, .results-left-lower, .results-right-lower {
@@ -38,7 +39,7 @@
 }
 
 .results-character {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 700;
 }
 
@@ -54,6 +55,7 @@
 .results-definitions {
     font-size: 0.7em;
     opacity: 0.8;
+    overflow: scroll;
 }
 
 .results-learning-status {
