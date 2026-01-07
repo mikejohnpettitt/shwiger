@@ -47,6 +47,11 @@ group :development do
   gem "web-console"
 end
 
+group :production do
+  gem "pg"
+end
+
+
 gem "devise"
 gem "sassc-rails"
 gem "bootstrap", "~> 5.2"
