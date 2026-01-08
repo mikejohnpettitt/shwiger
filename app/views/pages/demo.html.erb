@@ -1,0 +1,96 @@
+<div class="banner full-height">
+    <div class="banner-logo-container">
+        <h1>shwiger</h1>
+    </div>
+    <p>is currently under construction.</p>
+    <a href="#features-list" class="button primary large">But you can explore features <i class="fa-solid fa-arrow-down"></i>
+    </a>
+    <div class="deck-motif-banner">
+    <% Card.where(deck:2).first(150).each do |card|%>
+    <% card.entry.chinese.split("").each do |character| %>
+    <% if character != "…" %>
+    <div><%= character %></div>
+    <% end %>
+    <% end %>
+    <% end %>
+    </div>
+</div>
+
+<h1 class="page-title">Features</h1>
+
+<div id="features-list" class="container">
+
+<%= 
+render "shared/features_card",
+image: "one-definition.png",
+title: "One main definition",
+description: "Words inevitably have more than one meaning, but seeing all of these on your study card can get confusing, especially if the definition most relevant to you is not near the beginning. Shwiger allows you to edit your cards so that you see your main definition front and center.",
+status: "Live." %>
+
+<%= 
+render "shared/features_card",
+image: "drill-problem.png",
+title: "Drill problem cards",
+description: "Some characters are going to give us more trouble than others, and this can often be a very individual challenge, so it makes sense to spend a little more time on problem cards than others, allowing you to identify the reasons why they cause confusion and how to address this. Shwiger prioritises your problem cards to ensure you are learning intelligently.",
+status: "Live." %>
+
+<%= 
+render "shared/features_card",
+image: "common-mistakes.png",
+title: "Drill common mistakes",
+description: "Some characters in Chinese are very difficult to distinguish for new learners, and even after some years of learning, when you see characters in the wild, you might still make the same rookie mistakes. Shwiger supports you in make the distinction between similar characters an instinct.",
+status: "Coming very soon." %>
+
+<%= 
+render "shared/features_card",
+image: "tactile.png",
+title: "Tacticle",
+description: "Swipe left, swipe right, flip over. Interacting with Shwiger cards is made to feel natural and easy.",
+status: "Coming very soon." %>
+
+
+<%= 
+render "shared/features_card",
+image: "listening-practice.png",
+title: "Listening practice",
+description: "Don't just train your character recognition, train your listening skills. Listening is a huge challenge for most language learners, especially with a tonal language like Chinese. Shwiger allows you to train your aural recognition of Chinese words alongside learning the written characters and pinyin.",
+status: "Coming soon." %>
+
+<%= 
+render "shared/features_card",
+image: "tone-practice.png",
+title: "Tone practice",
+description: "Chinese is a tonal language, which can present a big challenge to new learners. Training your ear to hear the difference between each tone can really make the difference in understanding what you hear. Shwiger allows you to test and train your tone recognition.",
+status: "Coming soon." %>
+
+<%= 
+render "shared/features_card",
+image: "context.png",
+title: "Study in context",
+description: "Learning words in isolation is useful, but the real practice comes when you need to recall characters in a sentence. Shwiger starts you off by studying characters in isolation, before moving on to reading words in complete sentences.",
+status: "Coming soon." %>
+
+<%= 
+render "shared/features_card",
+image: "custom-card.png",
+title: "Custom cards and decks",
+description: "Sometimes you learn words that aren't in the textbook, and sometimes they even become part of your everyday vocabulary. Shwiger supports you in guiding your own learning by allowing you to create your own cards and decks.",
+status: "Coming soon." %>
+
+<%= 
+render "shared/features_card",
+image: "wubi.png",
+title: "Wubi practice",
+description: "Wubi is a method for typing Chinese characters that involves typing keys that relate to the component strokes as opposed to typing the pinyin or drawing the character directly. Learning to type with Wubi is challenging but very rewarding as it improves your ability to remember what a character looks like and how it is written. Shwiger allows you to practice typing with Wubi.",
+status: "Planned." %>
+
+<%= 
+render "shared/features_card",
+image: "writing-practice.png",
+title: "Writing practice",
+description: "For learners who want to deepen their learning, learning to write characters can help improve retention of characters and appreciation of the language. Shwiger allows you to practice writing characters, learning stroke order and strengthening retention at the same time.",
+status: "Planned." %>
+
+
+
+</div>
