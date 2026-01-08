@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, skip: [ :registrations ]
   root to: "pages#home"
+  get "/demo", to: "pages#demo"
   resources :decks do
     get :next, on: :member
   end

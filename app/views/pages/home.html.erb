@@ -3,13 +3,15 @@
         <h1>shwiger</h1>
         <div class="banner-logo"></div>
     </div>
-    <p>smart chinese flashcards</p>
+    <p>smart Chinese flashcards</p>
     <% if user_signed_in? %>
         <%= link_to user_decks_path, class: "button primary large" do %>
-        My dashboard >
+        My dashboard <i class="fa-solid fa-arrow-right"></i>
         <% end %>
     <% else %>
-    <div class="button primary large">Demo ></div>
+        <%= link_to demo_path, class: "button primary large" do %>
+        Demo <i class="fa-solid fa-arrow-right"></i>
+        <% end %>
     <% end %>
     <div class="deck-motif-banner">
     <% Card.where(deck:2).first(150).each do |card|%>
