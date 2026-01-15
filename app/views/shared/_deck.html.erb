@@ -24,6 +24,7 @@
 <%= link_to path do %>
 <div class="deck-container">
     <div class="deck-box <%= deck.color %> <%= 'inactive' if context == "show-user-deck" %>">
+        <!---
         <div class="deck-motif">
             <% Card.where(deck:deck).each do |card|%>
                 <% card.entry.chinese.split("").each do |character| %>
@@ -33,6 +34,7 @@
                 <% end %>
             <% end %>
         </div>
+        --->
         <div class="deck-title"><%= deck.name %></div>
         <div class="deck-subtitle">
         <% if context == "user-deck" || context == "show-user-deck" %>

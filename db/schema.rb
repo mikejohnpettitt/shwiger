@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_01_02_173650) do
+ActiveRecord::Schema[7.2].define(version: 2026_01_15_162152) do
   create_table "cards", force: :cascade do |t|
     t.integer "deck_id", null: false
     t.datetime "created_at", null: false
@@ -88,6 +88,9 @@ ActiveRecord::Schema[7.2].define(version: 2026_01_02_173650) do
     t.float "retention_pinyin"
     t.datetime "last_reviewed_pinyin"
     t.datetime "next_review_pinyin"
+    t.integer "session_review_tally"
+    t.integer "forgetability_definition"
+    t.integer "forgetability_pinyin"
     t.index ["card_id"], name: "index_user_cards_on_card_id"
     t.index ["preferred_definition_id"], name: "index_user_cards_on_preferred_definition_id"
     t.index ["user_id"], name: "index_user_cards_on_user_id"
