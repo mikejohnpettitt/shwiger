@@ -14,7 +14,7 @@
         <% end %>
     <% end %>
     <div class="deck-motif-banner">
-    <% Card.where(deck:2).first(150).each do |card|%>
+    <% Card.where(deck:2).each do |card|%>
     <% card.entry.chinese.split("").each do |character| %>
     <% if character != "…" %>
     <div><%= character %></div>

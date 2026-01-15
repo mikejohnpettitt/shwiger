@@ -52,17 +52,7 @@ class StudySessionsController < ApplicationController
       redirect_to results_study_session_path(@study_session)
   end
 
-  def next
-    @ralgo = 1.62
-    @ralgo_max = 28
-    @ralgo_min = 0.4
-    @deck = Deck.find(params[:deck])
-    current = @deck.cards.find(params[:card_id])
-    @user_card = UserCard.find_or_create_by(user: current_user, card: current)
-    # @user_card.save!
-    @study_session = StudySession.find(params[:id])
-    # LEARN START
-    if @study_session.mode == "learn"
+  def learn
       @user_card.retention_definition = @ralgo_min
       @user_card.retention_pinyin = @ralgo_min
       @user_card.save!
@@ -70,11 +60,15 @@ class StudySessionsController < ApplicationController
       .where(deck: @deck)
       .where.not(id: UserCard.where(user: current_user).select(:card_id))
       .first
+  end
+
+  def revise_definition
+    # first time reviewing this session? if yes, tally is 0, if no tally + 1
+    if @user_card.last_reviewed_definition <= @study_session.started_at || @user_card.session_review_tally.nil?
+      @user_card.session_review_tally = 0
+    else
+      @user_card.session_review_tally = @user_card.session_review_tally + 1
     end
-    # LEARN END
-    #
-    # REVISE DEFINITION START
-    if @study_session.mode == "revise-definition"
       @user_card.retention_definition = @ralgo_min if @user_card.retention_definition.nil?
       if ActiveModel::Type::Boolean.new.cast(params[:retained])
         @user_card.retention_definition = (@user_card.retention_definition * @ralgo).ceil
@@ -105,11 +99,10 @@ class StudySessionsController < ApplicationController
       else
         @card = nil
       end
-    end
-    # REVISE DEFINITION END
-    # REVISE PINYIN START
-    if @study_session.mode == "revise-pinyin"
-      @user_card.retention_pinyin = @ralgo_min if @user_card.retention_pinyin.nil?
+  end
+
+  def revise_pinyin
+          @user_card.retention_pinyin = @ralgo_min if @user_card.retention_pinyin.nil?
       if ActiveModel::Type::Boolean.new.cast(params[:retained])
         @user_card.retention_pinyin = (@user_card.retention_pinyin * @ralgo).ceil
         @user_card.retention_pinyin = @ralgo_max if @user_card.retention_pinyin > @ralgo_max
@@ -139,8 +132,29 @@ class StudySessionsController < ApplicationController
       else
         @card = nil
       end
+  end
+
+  def next
+    @ralgo = 1.62
+    @ralgo_max = 28
+    @ralgo_min = 0.4
+    @deck = Deck.find(params[:deck])
+    current = @deck.cards.find(params[:card_id])
+    @user_card = UserCard.find_or_create_by(user: current_user, card: current)
+    @study_session = StudySession.find(params[:id])
+
+    if @study_session.mode == "learn"
+      learn
     end
-    # REVISE PINYIN END
+
+    if @study_session.mode == "revise-definition"
+      revise_definition
+    end
+
+    if @study_session.mode == "revise-pinyin"
+      revise_pinyin
+    end
+
     # END OF DECK
     if @card.nil? == false
         render turbo_stream: turbo_stream.update(
