@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :user_cards
   resources :user_decks
+  resources :user_entry_similarities
   resources :study_sessions do
     get :next, on: :member
     get :results, on: :member

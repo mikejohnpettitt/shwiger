@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_01_15_162152) do
+ActiveRecord::Schema[7.2].define(version: 2026_01_28_085505) do
   create_table "cards", force: :cascade do |t|
     t.integer "deck_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "entry_id", null: false
+    t.boolean "temporary"
     t.index ["deck_id"], name: "index_cards_on_deck_id"
     t.index ["entry_id"], name: "index_cards_on_entry_id"
   end
@@ -105,6 +106,15 @@ ActiveRecord::Schema[7.2].define(version: 2026_01_15_162152) do
     t.index ["user_id"], name: "index_user_decks_on_user_id"
   end
 
+  create_table "user_entry_similarities", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "entry_similarity_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entry_similarity_id"], name: "index_user_entry_similarities_on_entry_similarity_id"
+    t.index ["user_id"], name: "index_user_entry_similarities_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -132,4 +142,6 @@ ActiveRecord::Schema[7.2].define(version: 2026_01_15_162152) do
   add_foreign_key "user_cards", "users"
   add_foreign_key "user_decks", "decks"
   add_foreign_key "user_decks", "users"
+  add_foreign_key "user_entry_similarities", "entry_similarities"
+  add_foreign_key "user_entry_similarities", "users"
 end
