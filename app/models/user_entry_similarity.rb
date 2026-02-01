@@ -1,0 +1,2 @@
+class UserEntrySimilarity < ApplicationRecord
+end

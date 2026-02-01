@@ -63,12 +63,6 @@ class StudySessionsController < ApplicationController
   end
 
   def revise_definition
-    # first time reviewing this session? if yes, tally is 0, if no tally + 1
-    if @user_card.last_reviewed_definition <= @study_session.started_at || @user_card.session_review_tally.nil?
-      @user_card.session_review_tally = 0
-    else
-      @user_card.session_review_tally = @user_card.session_review_tally + 1
-    end
       @user_card.retention_definition = @ralgo_min if @user_card.retention_definition.nil?
       if ActiveModel::Type::Boolean.new.cast(params[:retained])
         @user_card.retention_definition = (@user_card.retention_definition * @ralgo).ceil
@@ -81,28 +75,52 @@ class StudySessionsController < ApplicationController
         @user_card.next_review_definition = Time.current
       end
       @user_card.save!
-      @cards = Card
-      .where(deck: @deck)
-      .where(
-        id: UserCard
-        .where(user: current_user)
-        .where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current)
-        .select(:card_id)
-        )
-      @sort_hash = {}
-      @cards.each do |card|
-        @sort_hash[card.id] = UserCard.where(user: current_user, card_id: card.id).first.next_review_definition
-      end
-      @sort_hash = @sort_hash.sort_by { |_key, value| value }.to_h
-      if @sort_hash.empty? == false
-        @card = Card.find(@sort_hash.first.first)
+      @entry_similarity = params[:entry_similarity] if params[:entry_similarity].nil? == false
+      # temporary
+      # we'll skip the confused characters for now if there exist no similar entries
+      @entry_similarity = 4 if (EntrySimilarity.where(entry: @user_card.card.entry).length + EntrySimilarity.where(similar_entry: @user_card.card.entry).length) == 0
+      # raise
+      # this is not the first time they forgot
+      if @user_card.session_review_tally >= 1 && ActiveModel::Type::Boolean.new.cast(params[:retained]) == false && @entry_similarity.to_i != 4
+        # then we're going to pass
+        @card = @user_card.card
+        @temp = true
+        @flipped = true
+
+        # if user submitted some similar character entries then create them
+        if @entry_similarity.to_i == 3
+          params[:selection][:entry_similarity_ids].split(",").each do |ue|
+            UserEntrySimilarity.find_or_create_by(
+              user_id: current_user.id,
+              entry_similarity_id: ue
+            )
+          end
+        end
       else
+        # we carry on and find the next card
+        @cards = Card
+        .where(deck: @deck)
+        .where(
+          id: UserCard
+          .where(user: current_user)
+          .where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current)
+          .select(:card_id)
+        )
+        @sort_hash = {}
+        @cards.each do |card|
+          @sort_hash[card.id] = UserCard.where(user: current_user, card_id: card.id).first.next_review_definition
+        end
+        @sort_hash = @sort_hash.sort_by { |_key, value| value }.to_h
+        if @sort_hash.empty? == false
+          @card = Card.find(@sort_hash.first.first)
+        else
         @card = nil
+        end
       end
   end
 
   def revise_pinyin
-          @user_card.retention_pinyin = @ralgo_min if @user_card.retention_pinyin.nil?
+      @user_card.retention_pinyin = @ralgo_min if @user_card.retention_pinyin.nil?
       if ActiveModel::Type::Boolean.new.cast(params[:retained])
         @user_card.retention_pinyin = (@user_card.retention_pinyin * @ralgo).ceil
         @user_card.retention_pinyin = @ralgo_max if @user_card.retention_pinyin > @ralgo_max
@@ -142,6 +160,9 @@ class StudySessionsController < ApplicationController
     current = @deck.cards.find(params[:card_id])
     @user_card = UserCard.find_or_create_by(user: current_user, card: current)
     @study_session = StudySession.find(params[:id])
+    @temp = false
+    @flipped = false
+    @entry_similarity = 0
 
     if @study_session.mode == "learn"
       learn
@@ -155,12 +176,13 @@ class StudySessionsController < ApplicationController
       revise_pinyin
     end
 
+
     # END OF DECK
     if @card.nil? == false
         render turbo_stream: turbo_stream.update(
         "card-view",
         partial: "shared/card_#{@study_session.mode}",
-        locals: { card: @card, deck: @deck, study_session: @study_session, flipped: false }
+        locals: { card: @card, deck: @deck, study_session: @study_session, flipped: @flipped, temp: @temp, entry_similarity: @entry_similarity }
       )
     else
     end_session

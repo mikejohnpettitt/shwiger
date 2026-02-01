@@ -1,5 +1,15 @@
 <% #the code here should probably be handled by the controller %>
 <% @user_card = UserCard.where(card: card, user: current_user).first %>
+<% 
+    # first time reviewing this session? if yes, tally is 0, if no tally + 1
+    @user_card.session_review_tally = 0 if @user_card.session_review_tally.nil?
+    if @user_card.last_reviewed_definition <= @study_session.started_at 
+      @user_card.session_review_tally = 0
+    else
+      @user_card.session_review_tally = @user_card.session_review_tally + 1
+    end
+    @user_card.save!
+    %>
 <% @focus_review = false %>
 <% @focus_review = true if @user_card.last_reviewed_definition > study_session.started_at %>
 <% @total = Card
@@ -54,13 +64,60 @@
             </div>
             <div class="definition-container">
                 <div class="definition-item">
-                    <% if @focus_review %>
-                    Did you confuse with any of these?
-                        <% EntrySimilarity.where(entry: card.entry).to_a.each do |es| %>
-                            - <%= es.similar_entry.chinese %>
+                    <% if @focus_review && @temp %>
+                        <% if entry_similarity.to_i == 0 %>
+                            Did you confuse with a different character?
                         <% end %>
-                        <% EntrySimilarity.where(similar_entry: card.entry).to_a.each do |es| %>
-                            - <%= es.entry.chinese %>
+                        <% if entry_similarity.to_i == 2 %>
+                            Which character did you confuse it with?
+
+                            <%= simple_form_for :selection,
+                                url: next_study_session_path(study_session),
+                                method: :get,
+                                html: { class: "individual-definition", id: "entry-sim-form", data: { turbo: true, controller: "selection" } } do |f| %>
+
+                            <%= f.input :entry_similarity_ids, as: :hidden,
+                                    input_html: { data: { selection_target: "ids" } } %>
+
+                            <%= hidden_field_tag :card_id, card.id %>
+                            <%= hidden_field_tag :retained, false %>
+                            <%= hidden_field_tag :deck, deck.id %>
+                            <%= hidden_field_tag :entry_similarity, 3 %>
+
+                              <% EntrySimilarity.where(entry: card.entry).to_a.each do |es| %>
+                                <%= button_tag type: "button",
+                                    data: { action: "click->selection#toggle", "selection-id-value": es.id } do %>
+                                <%= es.similar_entry.chinese %>
+                                <% end %>
+
+                            <% end %>
+
+                            <% EntrySimilarity.where(similar_entry: card.entry).to_a.each do |es| %>
+                                <%= es.entry.chinese %>
+                            <% end %>
+
+                            <% end %>
+                        <% end %>
+                        <% if entry_similarity.to_i == 3 %>
+                        Ok we'll make a note that sometimes you confuse this character with...
+                        <% UserEntrySimilarity.where(user_id: current_user.id).to_a.each do |ue| %>
+                            
+                                <% if EntrySimilarity.find(ue.entry_similarity_id).entry.chinese == card.entry.chinese %>
+                                    <div class="individual-definition">
+                                    <%= button_tag type: "button" do %>
+                                        <%= EntrySimilarity.find(ue.entry_similarity_id).similar_entry.chinese %>
+                                    <% end %>
+                                    </div>
+                                <% end %>
+                                <% if EntrySimilarity.find(ue.entry_similarity_id).similar_entry.chinese == card.entry.chinese %>
+                                    <div class="individual-definition">
+                                    <%= button_tag type: "button" do %>
+                                        <%= EntrySimilarity.find(ue.entry_similarity_id).entry.chinese %>
+                                    <% end %>
+                                    </div>
+                                <% end %>
+                        
+                        <% end %>
                         <% end %>
                     <% else %>
                         <% Definition.where(entry: card.entry).to_a.each do |definition| %>
@@ -78,11 +135,32 @@
                     </div>
             </div>
                 <div class="button-container">
-
-                    <%= button_to "I forgot!" , next_study_session_path(study_session), method: :get, form: { data: {
-                        turbo_stream: true } }, params: { card_id: card.id, retained: false, deck: deck }, class: "card-button forgot" %>
-                    <%= button_to "I remember!" , next_study_session_path(study_session), method: :get, form: { data: {
-                        turbo_stream: true } }, params: { card_id: card.id, retained: true, deck: deck }, class: "card-button remember" %>
+                    <% if @focus_review && @temp %>
+                        <% if entry_similarity.to_i == 0 %>
+                            <%= button_to "No" , next_study_session_path(study_session), method: :get, form: { data: {
+                                turbo_stream: true } }, params: { card_id: card.id, retained: false, deck: deck, entry_similarity: 4 }, class: "card-button forgot" %>
+                            <%= button_to "Yes" , next_study_session_path(study_session), method: :get, form: { data: {
+                                turbo_stream: true } }, params: { card_id: card.id, retained: false, deck: deck, entry_similarity: 2 }, class: "card-button remember" %>
+                        <% end %>
+                        <% if entry_similarity.to_i == 2 %>
+                            <%= button_to "Cancel" , next_study_session_path(study_session), method: :get, form: { data: {
+                                turbo_stream: true } }, params: { card_id: card.id, retained: false, deck: deck, entry_similarity: 4 }, class: "card-button forgot" %>
+                            <%= button_tag "Continue",
+                                type: "submit",
+                                form: "entry-sim-form",
+                                class: "card-button remember",
+                                data: { turbo_stream: true } %>
+                        <% end %>
+                        <% if entry_similarity.to_i == 3 %>
+                        <%= button_to "Next!" , next_study_session_path(study_session), method: :get, form: { data: {
+                            turbo_stream: true } }, params: { card_id: card.id, retained: false, deck: deck, entry_similarity: 4 }, class: "card-button forgot" %>
+                        <% end %>
+                    <% else %>
+                        <%= button_to "I forgot!" , next_study_session_path(study_session), method: :get, form: { data: {
+                            turbo_stream: true } }, params: { card_id: card.id, retained: false, deck: deck }, class: "card-button forgot" %>
+                        <%= button_to "I remember!" , next_study_session_path(study_session), method: :get, form: { data: {
+                            turbo_stream: true } }, params: { card_id: card.id, retained: true, deck: deck }, class: "card-button remember" %>
+                    <% end %>
             </div>
         </div>
     </div>
@@ -91,6 +169,7 @@
 <div class="interactions-container">
     <div class="study-session-info">Revising definitions for <%= @deck.name %></div>
     <div class="study-session-info">Remaining: <%= @total %>. Forgotten: <%= @forgotten %>. Remembered: <%= @remembered %></div>
+    <div class="study-session-info">Times this card has been reviewed this session: <%= @user_card.session_review_tally %></div>
 </div>
 <div class="buttons-container">
     <%= button_to "End session",
