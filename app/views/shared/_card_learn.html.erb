@@ -2,10 +2,6 @@
 <% if @user_card.nil? || @user_card.card != card %>
     <% @first_definition = Definition.where(entry: card.entry).first %>
     <% @user_card = UserCard.create(user:current_user,card:card,preferred_definition:@first_definition) %>
-    <% @user_card.last_reviewed_definition = Time.current %>
-    <% @user_card.last_reviewed_pinyin = Time.current %>
-    <% @user_card.next_review_definition = Time.current %>
-    <% @user_card.next_review_pinyin = Time.current %>
     <% @user_card.save! %>
 <% else %>
     <% @user_card = UserCard.where(card:card,user:current_user).first %>
@@ -16,6 +12,7 @@
         id: UserCard
         .where(user: current_user)
         .where("created_at >= ?", @study_session.started_at)
+        .where.not(last_reviewed_definition: nil)
         .select(:card_id)
       ).count %>
 
@@ -67,7 +64,7 @@
 
 <div class="interactions-container">
     <div class="study-session-info">Learning cards in <%= @deck.name %></div>
-    <div class="study-session-info"><%= @total %> card<%= "s" if @total >1 %> learned so far</div>
+    <div class="study-session-info"><%= @total %> card<%= "s" if @total != 1 %> learned so far</div>
 
 </div>
 <div class="buttons-container">
