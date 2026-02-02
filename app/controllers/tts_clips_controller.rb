@@ -1,7 +1,7 @@
 class TtsClipsController < ApplicationController
   def create
     text = params.require(:text).to_s
-    voice_name = params[:voice_name].presence || "cmn-CN-Wavenet-A"
+    voice_name = params[:voice_name].presence || "cmn-CN-Chirp3-HD-Vindemiatrix"
     language_code = params[:language_code].presence || "cmn-CN"
     speaking_rate = (params[:speaking_rate].presence || 1.0).to_f
 
