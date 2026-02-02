@@ -1,0 +1,6 @@
+<h1>Listening practice</h1>
+<div>
+    <%= button_tag "Speak 我爱你",
+      type: "button",
+      data: { controller: "tts", action: "click->tts#speak", tts_text_value: "我爱你" } %>
+</div>

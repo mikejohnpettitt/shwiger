@@ -91,4 +91,6 @@ Rails.application.configure do
 
     at_exit { helper.travel_back }
   end
+
+  config.active_storage.service = :local
 end
