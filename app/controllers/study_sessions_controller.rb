@@ -7,6 +7,8 @@ class StudySessionsController < ApplicationController
     @study_session = StudySession.find(params[:id])
     @study_session_deck = StudySessionDeck.where(study_session: @study_session).first
     @deck = @study_session_deck.deck
+    # this cleans any partially learned/abandoned cards
+    UserCard.where(user: current_user).where(last_reviewed_definition: nil).destroy_all
     if @study_session.mode == "learn"
       @card = Card
       .where(deck: @deck)
@@ -47,15 +49,21 @@ class StudySessionsController < ApplicationController
 
   def end_session
     @study_session = StudySession.find(params[:id])
+    # this cleans any partially learned/abandoned cards
+    UserCard.where(user: current_user).where(last_reviewed_definition: nil).destroy_all
     @study_session.ended_at = Time.current
       @study_session.save!
       redirect_to results_study_session_path(@study_session)
   end
 
   def learn
-      @user_card.retention_definition = @ralgo_min
-      @user_card.retention_pinyin = @ralgo_min
-      @user_card.save!
+    @user_card.last_reviewed_definition = Time.current
+    @user_card.last_reviewed_pinyin = Time.current
+    @user_card.next_review_definition = Time.current
+    @user_card.next_review_pinyin = Time.current
+    @user_card.retention_definition = @ralgo_min
+    @user_card.retention_pinyin = @ralgo_min
+    @user_card.save!
       @card = Card
       .where(deck: @deck)
       .where.not(id: UserCard.where(user: current_user).select(:card_id))
