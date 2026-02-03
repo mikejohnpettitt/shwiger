@@ -35,6 +35,7 @@
         <div class="flip-card-front flip-card-face <%= "focus" if @focus_review %>" >
             <h2 class="large-character">
                 <%= card.entry.chinese %>
+                <%= render "shared/tts_button", text: card.entry.chinese, size: "small" %>
             </h2>
         </div>
         <div class="flip-card-back flip-card-face">

@@ -1,9 +1,9 @@
 
 <% if context == "user-deck" %>
 <% path = user_deck_path(UserDeck.where(user: current_user, deck: deck).first)%>
-<% # path = user_deck_path(UserDeck.where(user: current_user, deck: deck).first), method: :post, params: { deck_id: deck.id } %>
 <% @to_revise_def = Card.where(deck: deck).where(id: UserCard.where(user: current_user).where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current).select(:card_id)).count %>
 <% @to_revise_py = Card.where(deck: deck).where(id: UserCard.where(user: current_user).where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current).select(:card_id)).count %>
+<% @to_revise_listen = Card.where(deck: deck).where(id: UserCard.where(user: current_user).where("next_review_listen IS NULL OR next_review_listen <= ?", Time.current).select(:card_id)).count %>
 
 <% end %>
 
@@ -24,22 +24,11 @@
 <%= link_to path do %>
 <div class="deck-container">
     <div class="deck-box <%= deck.color %> <%= 'inactive' if context == "show-user-deck" %>">
-        <!---
-        <div class="deck-motif">
-            <% Card.where(deck:deck).each do |card|%>
-                <% card.entry.chinese.split("").each do |character| %>
-                    <% if character != "…" %>
-                        <div><%= character %></div>
-                    <% end %>
-                <% end %>
-            <% end %>
-        </div>
-        --->
         <div class="deck-title"><%= deck.name %></div>
         <div class="deck-subtitle">
         <% if context == "user-deck" || context == "show-user-deck" %>
         <div><%= Card.where(deck: deck).where(id: UserCard.where(user: current_user).select(:card_id)).count %>/<%= Card.where(deck: deck).length %></div>
-        <div>Due to revise: <%= @to_revise_def + @to_revise_py %></div>
+        <div>Due to revise: <%= @to_revise_def + @to_revise_py + @to_revise_listen %></div>
         <% end %>
         <% if context == "index-deck" %>
         <div><%= Card.where(deck: deck).length%> cards</div>

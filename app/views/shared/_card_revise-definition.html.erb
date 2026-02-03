@@ -46,6 +46,7 @@
         <div class="flip-card-front flip-card-face <%= "focus" if @focus_review %>" >
             <h2 class="large-character">
                 <%= card.entry.chinese %>
+                <%= render "shared/tts_button", text: card.entry.chinese, size: "small" %>
             </h2>
         </div>
         <div class="flip-card-back flip-card-face">
@@ -53,7 +54,7 @@
                 <%= card.entry.chinese %>
             </div>
             <div class="card-secondary">
-                <%= card.entry.pinyin %>
+                <%= card.entry.pinyin %> <%= render "shared/tts_button", text: card.entry.chinese, size: "very-small" %>
             </div>
             <div class="card-primary">
                 <% @preferred_definition = @user_card.preferred_definition %>

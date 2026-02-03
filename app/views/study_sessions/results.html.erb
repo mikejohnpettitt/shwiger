@@ -5,7 +5,9 @@
 <% @cards_reviewed = UserCard.where(
   "(last_reviewed_definition BETWEEN :start AND :end)
    OR
-   (last_reviewed_pinyin BETWEEN :start AND :end)",
+   (last_reviewed_pinyin BETWEEN :start AND :end)
+   OR
+   (last_reviewed_listen BETWEEN :start AND :end)",
   start: @study_session.started_at,
   end: @study_session.ended_at
 ) %>
