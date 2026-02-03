@@ -38,6 +38,17 @@ class StudySessionsController < ApplicationController
       )
       .first
     end
+    if @study_session.mode == "listen"
+      @card = Card
+      .where(deck: @deck)
+      .where(
+        id: UserCard
+        .where(user: current_user)
+        .where("next_review_listen IS NULL OR next_review_listen <= ?", Time.current)
+        .select(:card_id)
+      )
+      .first
+    end
   end
 
   def create
@@ -59,10 +70,13 @@ class StudySessionsController < ApplicationController
   def learn
     @user_card.last_reviewed_definition = Time.current
     @user_card.last_reviewed_pinyin = Time.current
+    @user_card.last_reviewed_listen = Time.current
     @user_card.next_review_definition = Time.current
     @user_card.next_review_pinyin = Time.current
+    @user_card.next_review_listen = Time.current
     @user_card.retention_definition = @ralgo_min
     @user_card.retention_pinyin = @ralgo_min
+    @user_card.retention_listen = @ralgo_min
     @user_card.save!
       @card = Card
       .where(deck: @deck)
@@ -160,6 +174,39 @@ class StudySessionsController < ApplicationController
       end
   end
 
+  def listen
+      @user_card.retention_listen = @ralgo_min if @user_card.retention_listen.nil?
+      if ActiveModel::Type::Boolean.new.cast(params[:retained])
+        @user_card.retention_listen = (@user_card.retention_listen * @ralgo).ceil
+        @user_card.retention_listen = @ralgo_max if @user_card.retention_listen > @ralgo_max
+        @user_card.last_reviewed_listen = Time.current
+        @user_card.next_review_listen = Time.current + @user_card.retention_listen.day
+      else
+        @user_card.retention_listen = @ralgo_min
+        @user_card.last_reviewed_listen = Time.current
+        @user_card.next_review_listen = Time.current
+      end
+      @user_card.save!
+      @cards = Card
+      .where(deck: @deck)
+      .where(
+        id: UserCard
+        .where(user: current_user)
+        .where("next_review_listen IS NULL OR next_review_listen <= ?", Time.current)
+        .select(:card_id)
+      )
+      @sort_hash = {}
+      @cards.each do |card|
+        @sort_hash[card.id] = UserCard.where(user: current_user, card_id: card.id).first.next_review_listen
+      end
+      @sort_hash = @sort_hash.sort_by { |_key, value| value }.to_h
+      if @sort_hash.empty? == false
+        @card = Card.find(@sort_hash.first.first)
+      else
+        @card = nil
+      end
+  end
+
   def next
     @ralgo = 1.62
     @ralgo_max = 28
@@ -182,6 +229,10 @@ class StudySessionsController < ApplicationController
 
     if @study_session.mode == "revise-pinyin"
       revise_pinyin
+    end
+
+    if @study_session.mode == "listen"
+      listen
     end
 
 

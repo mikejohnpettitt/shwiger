@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_02_02_213605) do
+ActiveRecord::Schema[7.2].define(version: 2026_02_03_072617) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -132,6 +132,10 @@ ActiveRecord::Schema[7.2].define(version: 2026_02_02_213605) do
     t.integer "session_review_tally"
     t.integer "forgetability_definition"
     t.integer "forgetability_pinyin"
+    t.float "retention_listen"
+    t.datetime "last_reviewed_listen"
+    t.datetime "next_review_listen"
+    t.float "forgettability_listen"
     t.index ["card_id"], name: "index_user_cards_on_card_id"
     t.index ["preferred_definition_id"], name: "index_user_cards_on_preferred_definition_id"
     t.index ["user_id"], name: "index_user_cards_on_user_id"

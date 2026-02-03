@@ -12,6 +12,9 @@
 <% if @study_session.mode == "revise-pinyin" %>
 <%= render "shared/card_revise-pinyin", card: @card, study_session: @study_session, deck: @deck, flipped: false %>
 <% end %>
+<% if @study_session.mode == "listen" %>
+<%= render "shared/card_listen", card: @card, study_session: @study_session, deck: @deck, flipped: false %>
+<% end %>
 </div>
 
 
