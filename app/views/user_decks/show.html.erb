@@ -34,6 +34,16 @@
     <%= f.button :submit, "Revise piniyn (#{@to_revise_py})", class: "button primary" %>
     <% end %>
 <% end %>
+
+<%= simple_form_for StudySession.new do |f| %>
+<%= f.hidden_field :mode, value: "listen" %>
+<%= f.hidden_field :deck_id, value: @user_deck.deck.id %>
+    <% if @to_revise_py == 0 %>
+    <%= f.button :submit, "Listen", disabled: true, class: "button primary" %>
+    <% else %>
+    <%= f.button :submit, "Listen (#{@to_listen})", class: "button primary" %>
+    <% end %>
+<% end %>
 </div>
 
 <%= link_to "< Return to my dashboard", user_decks_path %>

@@ -1,14 +1,14 @@
 <% #the code here should probably be handled by the controller %>
 <% @user_card = UserCard.where(card: card, user: current_user).first %>
 <% @focus_review = false %>
-<% @focus_review = true if @user_card.last_reviewed_pinyin > study_session.started_at %>
+<% @focus_review = true if @user_card.last_reviewed_listen > study_session.started_at %>
 <% @total = Card
       .where(deck: @deck)
       .where(
         id: UserCard
         .where(user: current_user)
-        .where("last_reviewed_pinyin <= ?", @study_session.started_at)
-        .where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current)
+        .where("last_reviewed_listen <= ?", @study_session.started_at)
+        .where("next_review_listen IS NULL OR next_review_listen <= ?", Time.current)
         .select(:card_id)
       ).count %>
 <% @forgotten = Card
@@ -16,8 +16,8 @@
       .where(
         id: UserCard
         .where(user: current_user)
-        .where("last_reviewed_pinyin >= ?", @study_session.started_at)
-        .where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current)
+        .where("last_reviewed_listen >= ?", @study_session.started_at)
+        .where("next_review_listen IS NULL OR next_review_listen <= ?", Time.current)
         .select(:card_id)
       ).count %>
 <% @remembered = Card
@@ -25,17 +25,24 @@
       .where(
         id: UserCard
         .where(user: current_user)
-        .where("last_reviewed_pinyin >= ?", @study_session.started_at)
-        .where("next_review_pinyin >= ?", Time.current)
+        .where("last_reviewed_listen >= ?", @study_session.started_at)
+        .where("next_review_listen >= ?", Time.current)
         .select(:card_id)
       ).count %>
 
 <div class="flip-card" data-controller="flip-card" data-action="click->flip-card#toggle" role="button">
     <div class="flip-card-inner <%= "is-flipped" if flipped %>"  data-flip-card-target="inner">
         <div class="flip-card-front flip-card-face <%= "focus" if @focus_review %>" >
-            <h2 class="large-character">
-                <%= card.entry.chinese %>
-            </h2>
+            <div class="large-character">
+            <div class="tts-button-container">
+                <%= button_tag type: "button",
+                    data: { controller: "tts", action: "click->tts#speak", tts_text_value: card.entry.chinese },
+                    class: "tts-button" do %>
+                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                        <span class="visually-hidden">Speak</span>
+                <% end %>
+            </div>
+            </div>
         </div>
         <div class="flip-card-back flip-card-face">
             <div class="character">
@@ -73,7 +80,7 @@
 </div>
 
 <div class="interactions-container">
-    <div class="study-session-info">Revising pinyin for <%= @deck.name %></div>
+    <div class="study-session-info">Revising listening for <%= @deck.name %></div>
     <div class="study-session-info">Remaining: <%= @total %>. Forgotten: <%= @forgotten %>. Remembered: <%= @remembered %></div>
 </div>
 <div class="buttons-container">
