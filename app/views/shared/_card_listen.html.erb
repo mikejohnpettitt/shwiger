@@ -34,14 +34,7 @@
     <div class="flip-card-inner <%= "is-flipped" if flipped %>"  data-flip-card-target="inner">
         <div class="flip-card-front flip-card-face <%= "focus" if @focus_review %>" >
             <div class="large-character">
-            <div class="tts-button-container">
-                <%= button_tag type: "button",
-                    data: { controller: "tts", action: "click->tts#speak", tts_text_value: card.entry.chinese },
-                    class: "tts-button" do %>
-                        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
-                        <span class="visually-hidden">Speak</span>
-                <% end %>
-            </div>
+            <%= render "shared/tts_button", text: card.entry.chinese, size: "large" %>
             </div>
         </div>
         <div class="flip-card-back flip-card-face">
@@ -49,11 +42,11 @@
                 <%= card.entry.chinese %>
             </div>
             <div class="card-secondary">
-                <% @preferred_definition = @user_card.preferred_definition %>
-                <%=@preferred_definition.english %>
+                <%= card.entry.pinyin %> <%= render "shared/tts_button", text: card.entry.chinese, size: "very-small" %>
             </div>
             <div class="card-primary">
-                <%= card.entry.pinyin %>
+                <% @preferred_definition = @user_card.preferred_definition %>
+                <%=@preferred_definition.english %>
             </div>
             <div class="definition-container">
                 <div class="definition-item">

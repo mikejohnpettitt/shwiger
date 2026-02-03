@@ -1,5 +1,6 @@
 <% @to_revise_def = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_definition IS NULL OR next_review_definition <= ?", Time.current).select(:card_id)).count %>
 <% @to_revise_py = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_pinyin IS NULL OR next_review_pinyin <= ?", Time.current).select(:card_id)).count %>
+<% @to_revise_listen = Card.where(deck: @deck).where(id: UserCard.where(user: current_user).where("next_review_listen IS NULL OR next_review_listen <= ?", Time.current).select(:card_id)).count %>
 
 <h1 class="page-title">My progress</h1>
 
@@ -38,10 +39,10 @@
 <%= simple_form_for StudySession.new do |f| %>
 <%= f.hidden_field :mode, value: "listen" %>
 <%= f.hidden_field :deck_id, value: @user_deck.deck.id %>
-    <% if @to_revise_py == 0 %>
+    <% if @to_revise_listen == 0 %>
     <%= f.button :submit, "Listen", disabled: true, class: "button primary" %>
     <% else %>
-    <%= f.button :submit, "Listen (#{@to_listen})", class: "button primary" %>
+    <%= f.button :submit, "Listen (#{@to_revise_listen})", class: "button primary" %>
     <% end %>
 <% end %>
 </div>

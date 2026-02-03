@@ -59,6 +59,8 @@
 }
 .card-secondary {
     font-size: 1em;
+    display: flex;
+    align-items: center;
 }
 
 .card-primary {
@@ -150,10 +152,18 @@
     background-color: rgba(0, 0, 0, 0);
     border: none;
     color: white;
-    font-size: 0.8em;
     margin: 0.2em 0 0 0;
 }
 
-.tts-button-container {
+.tts-button.large {
+    font-size: 0.8em;
+}
 
+.tts-button.small {
+    font-size: 0.5em;
+}
+
+.tts-button.very-small {
+    font-size: 1em;
+    color: black;
 }

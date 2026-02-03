@@ -1,0 +1,8 @@
+<div class="tts-button-container">
+    <%= button_tag type: "button",
+        data: { controller: "tts", action: "click->tts#speak", tts_text_value: text },
+        class: "tts-button #{size}" do %>
+            <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+            <span class="visually-hidden">Speak</span>
+    <% end %>
+</div>
