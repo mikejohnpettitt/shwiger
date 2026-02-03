@@ -1,4 +1,3 @@
-# app/jobs/generate_tts_clip_job.rb
 class GenerateTtsClipJob < ApplicationJob
   queue_as :default
 
