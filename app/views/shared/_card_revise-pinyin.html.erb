@@ -47,7 +47,7 @@
                 <%=@preferred_definition.english %>
             </div>
             <div class="card-primary">
-                <%= card.entry.pinyin %>
+                <%= card.entry.pinyin %> <%= render "shared/tts_button", text: card.entry.chinese, size: "very-small" %>
             </div>
             <div class="definition-container">
                 <div class="definition-item">
