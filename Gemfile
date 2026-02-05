@@ -54,7 +54,7 @@ end
 
 gem "devise"
 gem "sassc-rails"
-gem "bootstrap", "~> 5.2"
+gem "bootstrap", "~> 5.3"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "fuzzy-string-match", "~> 1.0", ">= 1.0.1"
