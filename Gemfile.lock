@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: 584127a00bfe027ff5fb779fa11f859045d5ae9f
+  revision: 2df5c7df85e0ae01d1bd781df9b3689828a15713
   specs:
-    simple_form (5.4.0)
+    simple_form (5.4.1)
       actionpack (>= 7.0)
       activemodel (>= 7.0)
 
@@ -299,7 +299,7 @@ GEM
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
-    prism (1.7.0)
+    prism (1.9.0)
     psych (5.3.1)
       date
       stringio
